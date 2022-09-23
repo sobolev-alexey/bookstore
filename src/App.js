@@ -87,11 +87,11 @@ function BookCard(props) {
 
   return (
     <>
-      {Object.keys(books).map(bookIndex => {
+      {Object.keys(books).map((bookIndex, index) => {
         const book = books[bookIndex];
 
         return (
-          <Card key={book.Title} className={classes.root}>
+          <Card key={`${book.Title}-${index}`} className={classes.root}>
             <CardContent>
               <Typography variant="h5" component="h2">
                 {book.Title}
