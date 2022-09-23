@@ -13,15 +13,20 @@
   "author": "Alexey Sobolev <hello@lexer.dev> (https://lexer.dev/)",
   "license": "Apache-2.0",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@types/react": "^18.0.21",
+    "antd": "^4.23.2",
+    "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "express": "^4.18.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -39,7 +44,8 @@
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "parcel-bundler": "^1.12.5",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "sass": "^1.55.0"
   },
   "browserslist": [
     "last 2 Chrome versions"
