@@ -1,0 +1,84 @@
+// helpers
+@import './helpers/globals';
+
+// components
+@import './components/button';
+@import './components/form';
+@import './components/header';
+@import './components/text';
+
+// pages
+@import './pages/landing';
+@import './pages/details';
+@import './pages/cart';
+@import './pages/checkout';
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div,
+span,
+p,
+label,
+input,
+select,
+section,
+footer,
+header,
+nav,
+ul,
+li,
+button,
+tr,
+td,
+th {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+label {
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}
+
+code {
+  user-select: text;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+label {
+  font-weight: 500;
+}
