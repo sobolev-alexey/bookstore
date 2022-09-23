@@ -1,0 +1,47 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "Bookstore",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/index.html",
+    "bootServer": "node ./server/index.js",
+    "build": "parcel build ./src/index.html",
+    "lint": "eslint './**/*.js' --fix"
+  },
+  "keywords": [],
+  "author": "Alexey Sobolev <hello@lexer.dev> (https://lexer.dev/)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/react": "^16.8.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-import": "^1.13.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-compat": "^3.5.1",
+    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "1.19.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}
