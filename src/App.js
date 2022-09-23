@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,7 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-
+import GlobalState, { AppContext } from './context/globalState';
 import 'antd/dist/antd.min.css';
 import './styles/index.scss';
 
@@ -30,19 +30,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CategoryPage() {
+const App = () => (
+  <GlobalState>
+    <CategoryPage />
+  </GlobalState>
+);
+
+function CategoryPage() {
+  const { books } = useContext(AppContext);
   const classes = useStyles();
-
-  const [books, setBooks] = useState({});
-
-  useEffect(() => {
-    function fetchBooks() {
-      fetch('http://localhost:3000/api/books')
-        .then(res => res.json())
-        .then(booksObj => setBooks(booksObj));
-    }
-    fetchBooks();
-  }, []);
 
   return (
     <div className={classes.root}>
@@ -116,3 +112,5 @@ function BookCard(props) {
     </>
   );
 }
+
+export default App;
