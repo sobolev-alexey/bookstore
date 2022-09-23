@@ -1,116 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import GlobalState, { AppContext } from './context/globalState';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import GlobalState from './context/globalState';
 import 'antd/dist/antd.min.css';
 import './styles/index.scss';
+import { Landing, Details, Cart, Checkout } from './pages';
+import loadFonts from './utils/fonts';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  }
-}));
+loadFonts();
 
 const App = () => (
   <GlobalState>
-    <CategoryPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path={'/details/:book'} element={<Details />} />
+        <Route path={'/cart'} element={<Cart />} />
+        <Route path={'/checkout'} element={<Checkout />} />
+        <Route index element={<Landing />} />
+        <Route path="*" element={<Landing />} />
+      </Routes>
+    </BrowserRouter>
   </GlobalState>
 );
-
-function CategoryPage() {
-  const { books } = useContext(AppContext);
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Book Shop
-          </Typography>
-          <Button color="inherit">Cart</Button>
-        </Toolbar>
-      </AppBar>
-      <main className={classes.content}>
-        <BookCard books={books} />
-      </main>
-    </div>
-  );
-}
-
-const cardStyles = makeStyles({
-  root: {
-    minWidth: '50%',
-    marginBottom: 8,
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-function BookCard(props) {
-  const classes = cardStyles();
-
-  const { books } = props;
-
-
-  return (
-    <>
-      {Object.keys(books)?.map((bookIndex, index) => {
-        const book = books[bookIndex];
-
-        return (
-          <Card key={`${book?.Title}-${index}`} className={classes.root}>
-            <CardContent>
-              <Typography variant="h5" component="h2">
-                {book?.Title}
-              </Typography>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {book?.Author}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Book in detail</Button>
-            </CardActions>
-          </Card>
-        );
-      })}
-    </>
-  );
-}
 
 export default App;
