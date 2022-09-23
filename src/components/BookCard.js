@@ -65,6 +65,18 @@ function BookCard({ books }) {
                   {book?.averageRating} ({book?.ratingsCount})
                 </Typography>
               )}
+              {book?.listPrice?.amount && (
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  {new Intl.NumberFormat(book?.country, {
+                    style: 'currency',
+                    currency: book?.listPrice?.currencyCode,
+                  }).format(book?.listPrice?.amount)}
+                </Typography>
+              )}
             </CardContent>
             <CardActions>
               <Button size="small">Book in detail</Button>
