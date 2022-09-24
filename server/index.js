@@ -24,6 +24,15 @@ server.get('/api/books', async (req, res) => {
   }
 });
 
+server.get('/api/search', async (req, res) => {
+  try {
+    const results = await findBooks(req?.query?.q);
+    res.send(results);
+  } catch (error) { 
+    console.error(error);
+  }
+});
+
 //set port and log to the console
 server.listen(3000, () => console.log('server listening'));
 
