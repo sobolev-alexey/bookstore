@@ -1,0 +1,148 @@
+.header-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  z-index: 5;
+  
+  .header-top-wrapper {
+    background-color: $header-background-dark;
+    height: 44px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+
+    .header-content {
+      height: 44px;
+    }
+
+    .free-delivery-banner {
+      position: absolute;
+      top: 0;
+      z-index: 6;
+    }
+
+    .free-delivery {
+      z-index: 7;
+      text-transform: uppercase;
+      color: $white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      column-gap: 5px;
+
+      .icon-rocket {
+        width: 20px;
+        z-index: 8;
+      }
+    }
+  }
+
+  .header-middle-wrapper {
+    background-color: $header-background;
+    height: 82px;
+    column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .header-content {
+      height: 82px;
+    }
+
+    a {
+      width: 15.4rem;
+      max-width: 100%;
+    }
+
+    .logo {
+      width: 154px;
+      height: 52px;
+    }
+
+    .header-search-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+
+      .ant-form-item {
+        margin: 0;
+        max-width: 850px;
+        width: 100%;
+      }
+
+      .search-bar {
+        height: 44px;
+      }
+    }
+
+  }
+
+  .header-bottom-wrapper {
+    background-color: $white;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    
+    .header-content {
+      height: 40px;
+    }
+
+    .category-wrapper {
+
+    }
+
+    .cart-wrapper {
+      width: 145px;
+      height: 100%;
+      background-color: $highlight-color;
+      color: $white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-weight: 700;
+        color: $white;
+      }
+
+      .cart-link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        width: 50%;
+
+        &:visited, &:hover {
+          color: unset;
+        }
+
+        .cart-icon {
+          width: 20px;
+        }
+      }
+
+    }
+  }
+
+  .header-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &.centered {
+      justify-content: center;
+    }
+  }
+}
