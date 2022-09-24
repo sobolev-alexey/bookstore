@@ -1,90 +1,67 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import React, { useContext } from 'react';
+import { Image, Rate } from 'antd';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../context/globalState';
+import missingThumbnail from "../assets/missingThumbnail.png";
+import { getPriceLabel } from '../utils/helpers';
 
-const cardStyles = makeStyles({
-  root: {
-    minWidth: '50%',
-    marginBottom: 8,
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+const BookCard = ({ book }) => {
+  const { cartItems, setCartItems } = useContext(AppContext);
 
-function BookCard({ books }) {
-  const classes = cardStyles();
+  const addBook = book => {
+    setCartItems([...cartItems, book]);
+  }
 
   return (
-    <>
-      {books?.map((book, index) => {
-        return (
-          <Card
-            key={book?.isbn || `${book?.title}-${index}`}
-            className={classes.root}
+    <div
+      key={`${book?.ID}-${book?.ISBN}`}
+      className="book-item-wrapper"
+    >
+        <Link to={`/book/${book?.ID}`}>
+          <Image 
+            className="thumbnail"
+            src={book?.Cover || missingThumbnail} 
+            alt={book?.Title} 
+            width={90}
+            height={140}
+            preview={false}
+            placeholder
+            fallback={missingThumbnail}
+          />
+        </Link>
+        <div className="item-info">
+          <Link to={`/book/${book?.ID}`}>
+            <h4 className="title">
+              {book?.Title}
+            </h4>
+          </Link>
+          <Link to={`/book/${book?.ID}`}>
+            <p className="author">
+              {book?.Author || <>&nbsp;</>}
+            </p>
+          </Link>
+        </div>
+        <div className="rating">
+          <Rate allowHalf disabled defaultValue={book?.AverageRating || 0} />&nbsp;&nbsp;
+          ({book?.RatingsCount || 0})
+        </div>
+        <div className="price">
+          { 
+            book?.ListPrice?.amount 
+            ? getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) 
+            : <p>Not available</p>
+          }
+        </div>
+        <div className="actions">
+          <button 
+            className="primary" 
+            onClick={() => addBook(book)}
+            disabled={!book?.ListPrice?.amount}
           >
-            <CardContent>
-              <img src={book?.cover} alt={book?.title} width={128} />
-              <Typography variant="h5" component="h2">
-                {book?.title}
-              </Typography>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {book?.author}
-              </Typography>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {book?.isbn}
-              </Typography>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {book?.description}
-              </Typography>
-              {book?.ratingsCount && book?.averageRating && (
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {book?.averageRating} ({book?.ratingsCount})
-                </Typography>
-              )}
-              {book?.listPrice?.amount && (
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {new Intl.NumberFormat(book?.country, {
-                    style: 'currency',
-                    currency: book?.listPrice?.currencyCode,
-                  }).format(book?.listPrice?.amount)}
-                </Typography>
-              )}
-            </CardContent>
-            <CardActions>
-              <Button size="small">Book in detail</Button>
-            </CardActions>
-          </Card>
-        );
-      })}
-    </>
+            Add to basket
+          </button>
+        </div>
+    </div>
   );
 }
 
