@@ -4,12 +4,14 @@ export const AppContext = React.createContext({});
 const GlobalState = ({ children }) => {
   const [isLoading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const booksObjResponse = await fetch(process.env.REACT_APP_BACKEND_URL);
       const booksObj = await booksObjResponse.json();
       setBooks(booksObj);
+      setFilteredBooks(booksObj);
       setLoading(false);
     }
 
@@ -19,7 +21,7 @@ const GlobalState = ({ children }) => {
   return (
     <AppContext.Provider value={{ 
       isLoading,
-      books
+      books, filteredBooks
     }}>
       {children}
     </AppContext.Provider>
