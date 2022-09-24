@@ -12,7 +12,7 @@ exports.fetchCovers = async booksObj => {
   const bookDataMiniArr = [];
   try {
     try {
-      const bookDataFromStorage = fs.readFileSync('./books.json');
+      const bookDataFromStorage = fs.readFileSync('./books_mini.json');
       if (bookDataFromStorage) {
         return JSON.parse(bookDataFromStorage);
       }
