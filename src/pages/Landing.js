@@ -1,57 +1,96 @@
-import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/globalState';
-import { BookCard } from '../components';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  }
-}));
+import { BookCard, BookCarousel, Layout, Banner } from '../components';
 
 const Landing = () => {
   const { books } = useContext(AppContext);
-  const classes = useStyles();
+  const [fiction, setFiction] = useState([]);
+  const [nonfiction, setNonfiction] = useState([]);
+  const [tech, setTech] = useState([]);
+  const [science, setScience] = useState([]);
+  const [philosophy, setPhilosophy] = useState([]);
+
+  useEffect(() => {
+    const fiction = [];
+    const nonfiction = [];
+    const tech = [];
+    const science = [];
+    const philosophy = [];
+  
+    books?.forEach(book => {
+      if (book?.Genre === 'fiction') {
+        fiction.push(book);
+      } else if (book?.Genre === 'nonfiction') {
+        nonfiction.push(book);
+      } else if (book?.Genre === 'tech') {
+        tech.push(book);
+      } else if (book?.Genre === 'science') {
+        science.push(book);
+      } else if (book?.Genre === 'philosophy') {
+        philosophy.push(book);
+      } 
+    });
+
+    setFiction(fiction);
+    setNonfiction(nonfiction);
+    setTech(tech);
+    setScience(science);
+    setPhilosophy(philosophy);
+
+  }, [books.length]);
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Book Shop
-          </Typography>
-          <Button color="inherit">Cart</Button>
-        </Toolbar>
-      </AppBar>
-      <main className={classes.content}>
-        <BookCard books={books} />
-      </main>
-    </div>
+    <Layout>
+      <div className="landing-wrapper">
+        <Banner />
+
+        <div className="book-carousel-wrapper">
+          <h2>Bestselling Books</h2>
+          <BookCarousel
+            books={books
+              ?.filter(book => book?.RatingsCount > 0)
+              ?.sort((a, b) => b?.RatingsCount - a?.RatingsCount)
+            } 
+          />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Top rated</h2>
+          <BookCarousel
+            books={books
+              ?.filter(book => book?.AverageRating > 0 && book?.RatingsCount > 0)
+              ?.sort((a, b) => b?.RatingsCount - a?.RatingsCount)
+              ?.sort((a, b) => b?.AverageRating - a?.AverageRating)
+            } 
+          />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>New releases and in the news</h2>
+          <BookCarousel
+            books={books?.sort((a, b) => a?.RatingsCount - b?.RatingsCount)} 
+          />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Non-fiction Books</h2>
+          <BookCarousel books={nonfiction} />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Fiction Books</h2>
+          <BookCarousel books={fiction} />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Tech Books</h2>
+          <BookCarousel books={tech} />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Philosophy Books</h2>
+          <BookCarousel books={philosophy} />
+        </div>
+        <div className="book-carousel-wrapper">
+          <h2>Science Books</h2>
+          <BookCarousel books={science} />
+        </div>
+      </div>
+    </Layout>
   );
 }
 
