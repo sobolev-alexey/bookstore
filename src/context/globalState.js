@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { fetchBooks, fetchCovers } from '../utils/booksHelper';
 export const AppContext = React.createContext({});
 
 const GlobalState = ({ children }) => {
@@ -8,16 +7,10 @@ const GlobalState = ({ children }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const booksObj = await fetchBooks();
+      const booksObjResponse = await fetch(process.env.REACT_APP_BACKEND_URL);
+      const booksObj = await booksObjResponse.json();
+      setBooks(booksObj);
       setLoading(false);
-      const bookDataArr = booksObj?.map(book => ({
-        title: book?.Title,
-        author: book?.Author,
-        genre: book?.Genre,
-      }));
-      setBooks(bookDataArr);
-      const bookData = await fetchCovers(booksObj.slice(0, 5));
-      setBooks(bookData);
     }
 
     fetchData();
