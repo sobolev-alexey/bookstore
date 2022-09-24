@@ -1,0 +1,44 @@
+.book-item-wrapper {
+  width: 150px;
+  padding: 0.5rem 1rem 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .thumbnail {
+    width: 90px;
+    height: 140px;
+  }
+
+  .title {
+    padding-top: 0.5rem;
+    height: 40px;
+    margin: 0;
+    width: 100%;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: content-box;
+    margin-bottom: 5px;
+  }
+
+  .author {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 145px;
+    white-space: nowrap;
+  }
+
+  .price {
+    font-size: 17px;
+    color: $highlight-color;
+    margin: 10px 0 5px;
+  }
+
+  .actions {
+    button.primary {
+      width: 140px;
+    }
+  }
+}
