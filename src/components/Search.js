@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Form, Input } from 'antd';
+import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import { AppContext } from '../context/globalState';
 import { findBooks } from '../utils/helpers';
@@ -9,9 +10,15 @@ const SearchBar = () => {
 
   const [searchForm] = Form.useForm();
 
-  const onFinish = values => {
+  const onFinish = async values => {
     const result = findBooks(books, values?.query);
     setFilteredBooks(result);
+    try {
+      const backendResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/search?q=${values?.query}`);
+      backendResponse?.data && setFilteredBooks(backendResponse?.data);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const onChange = async event => {

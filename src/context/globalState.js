@@ -9,7 +9,7 @@ const GlobalState = ({ children }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const booksObjResponse = await fetch(process.env.REACT_APP_BACKEND_URL);
+      const booksObjResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/books`);
       const booksObj = await booksObjResponse.json();
       setBooks(booksObj);
       setFilteredBooks(booksObj);
