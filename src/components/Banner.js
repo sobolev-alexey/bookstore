@@ -12,6 +12,7 @@ function Banner() {
     <div className="banner-carousel-wrapper">
       <Carousel 
         autoplay
+        lazyLoad
         autoplaySpeed={7000}
         dots={false}
       >
