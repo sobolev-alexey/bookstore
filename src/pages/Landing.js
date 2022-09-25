@@ -3,7 +3,12 @@ import { AppContext } from '../context/globalState';
 import { Bookshelf, Layout, Banner } from '../components';
 
 const Landing = () => {
-  const { books } = useContext(AppContext);
+  const { filteredBooks } = useContext(AppContext);
+  const [books, setBooks] = useState(filteredBooks);
+
+  useEffect(() => {
+    setBooks(filteredBooks);
+  }, [filteredBooks?.length]);
 
   return (
     <Layout>
