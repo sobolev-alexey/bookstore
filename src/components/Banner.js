@@ -4,7 +4,7 @@ import { Carousel } from 'antd';
 import { AppContext } from '../context/globalState';
 import discountBanner from '../assets/discount.jpg';
 
-const Banner = () => {
+function Banner() {
   const { books } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -40,4 +40,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default React.memo(Banner);
