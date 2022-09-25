@@ -1,12 +1,23 @@
 import React, { useContext } from 'react';
 import { Form, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import { AppContext } from '../context/globalState';
+import { findBooks } from '../utils/helpers';
 
 const SearchBar = () => {
+  const { books, setFilteredBooks } = useContext(AppContext);
+
   const [searchForm] = Form.useForm();
 
-  const onFinish = async values => {
-    console.log(333, values?.query);
+  const onFinish = values => {
+    const result = findBooks(books, values?.query);
+    setFilteredBooks(result);
+  }
+
+  const onChange = async event => {
+    if (event.target?.value === '') {
+      setFilteredBooks(books);
+    }
   }
 
   return (
@@ -29,6 +40,7 @@ const SearchBar = () => {
           prefix={<SearchOutlined />}
           suffix={null}
           className="search-bar"
+          onChange={onChange}
         />
       </Form.Item>
       <button className="search" type="submit">Search</button>
