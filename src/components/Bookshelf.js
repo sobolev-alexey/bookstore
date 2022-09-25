@@ -91,13 +91,4 @@ function Bookshelf({ books }) {
   );
 };
 
-function areEqual(prevProps, nextProps) {
-  /*
-  return true if passing nextProps to render would return
-  the same result as passing prevProps to render,
-  otherwise return false
-  */
-  return prevMovie.length === nextMovie.length
-}
-
-export default React.memo(Bookshelf, areEqual);
+export default React.memo(Bookshelf);
