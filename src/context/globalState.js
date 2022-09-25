@@ -6,6 +6,7 @@ const GlobalState = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [refs, setRefs] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,11 +23,13 @@ const GlobalState = ({ children }) => {
   return (
     <AppContext.Provider value={{ 
       isLoading,
+      refs,
       books, 
       filteredBooks,
       setFilteredBooks,
       setCartItems,
       cartItems,
+      setRefs,
     }}>
       {children}
     </AppContext.Provider>

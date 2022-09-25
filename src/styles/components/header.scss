@@ -93,8 +93,22 @@
       height: 40px;
     }
 
-    .category-wrapper {
+    .category-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      column-gap: 30px;
 
+      span {
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+      }
     }
 
     .cart-wrapper {

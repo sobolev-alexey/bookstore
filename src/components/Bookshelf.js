@@ -1,12 +1,20 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { BookCarousel } from '../components';
+import { AppContext } from '../context/globalState';
 
 function Bookshelf({ books }) {
+  const { setRefs } = useContext(AppContext);
   const [fiction, setFiction] = useState([]);
   const [nonfiction, setNonfiction] = useState([]);
   const [tech, setTech] = useState([]);
   const [science, setScience] = useState([]);
   const [philosophy, setPhilosophy] = useState([]);
+
+  const refs = useRef([]);
+
+  useEffect(() => {
+    setRefs(refs);
+  }, []);
 
   useEffect(() => {
     sortByGenre(books);
@@ -42,7 +50,10 @@ function Bookshelf({ books }) {
 
   return (
     <>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper" 
+        ref={(ref) => refs.current.push({ key: 'bestselling', ref })}
+      >
         <h2>Bestselling Books</h2>
         <BookCarousel
           books={books
@@ -51,7 +62,10 @@ function Bookshelf({ books }) {
           } 
         />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper" 
+        ref={(ref) => refs.current.push({ key: 'topRated', ref })}
+      >
         <h2>Top rated</h2>
         <BookCarousel
           books={books
@@ -61,29 +75,47 @@ function Bookshelf({ books }) {
           } 
         />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'newReleases', ref })}
+      >
         <h2>New releases and in the news</h2>
         <BookCarousel
           books={books?.sort((a, b) => a?.RatingsCount - b?.RatingsCount)} 
         />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'nonfiction', ref})}
+      >
         <h2>Non-fiction Books</h2>
         <BookCarousel books={nonfiction} />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'fiction', ref})}
+      >
         <h2>Fiction Books</h2>
         <BookCarousel books={fiction} />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'tech', ref})}
+      >
         <h2>Tech Books</h2>
         <BookCarousel books={tech} />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'philosophy', ref})}
+      >
         <h2>Philosophy Books</h2>
         <BookCarousel books={philosophy} />
       </div>
-      <div className="book-carousel-wrapper">
+      <div 
+        className="book-carousel-wrapper"
+        ref={(ref) => refs.current.push({ key: 'science', ref})}
+      >
         <h2>Science Books</h2>
         <BookCarousel books={science} />
       </div>
