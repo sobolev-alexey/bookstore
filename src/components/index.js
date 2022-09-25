@@ -6,7 +6,7 @@ import BookCarousel from './BookCarousel';
 import Cart from './Cart';
 import Layout from './Layout';
 import Search from './Search';
-import ShippingBanner from './ShippingBanner';
+import Bookshelf from './Bookshelf';
 
 export { 
   BookCard,
@@ -17,5 +17,5 @@ export {
   Cart,
   Layout,
   Search,
-  ShippingBanner,
+  Bookshelf,
 };
