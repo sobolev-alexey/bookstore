@@ -12,7 +12,7 @@ const App = () => (
   <GlobalState>
     <BrowserRouter>
       <Routes>
-        <Route path={'/book/:book'} element={<Details />} />
+        <Route path={'/book/:bookId'} element={<Details />} />
         <Route path={'/cart'} element={<Cart />} />
         <Route path={'/checkout'} element={<Checkout />} />
         <Route index element={<Landing />} />

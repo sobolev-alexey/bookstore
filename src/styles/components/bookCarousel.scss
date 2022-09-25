@@ -1,0 +1,25 @@
+.book-carousel-wrapper {
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15px 0;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgb(0 0 0 / 10%);
+
+  h2 {
+    width: 100%;
+    padding-left: 35px;
+  }
+  
+  .books-carousel {
+    width: 100%;
+    padding: 10px 0 10px 12px;
+
+    .books-page {
+      display: flex;
+      justify-content: center;
+      column-gap: 15px;
+    }
+  }
+}
