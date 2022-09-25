@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const csv = require('csvtojson');
 const cors = require('cors');
+const fs = require('fs');
 const { fetchCovers, findBooks } = require('./utils');
 require('dotenv').config();
 
@@ -21,6 +22,20 @@ server.get('/api/books', async (req, res) => {
     res.send(bookData);
   } catch (error) { 
     console.error(error);
+  }
+});
+
+server.get('/api/books/:id', async (req, res) => {
+  try {
+    const bookDataFromStorage = fs.readFileSync('./books.json');
+    if (bookDataFromStorage) {
+      const result = JSON.parse(bookDataFromStorage)
+        ?.find(book => book?.ID === req.params?.id);
+      return res.send(result);
+    }
+  } catch (error) { 
+    console.error(error);
+    res.send(null);
   }
 });
 
