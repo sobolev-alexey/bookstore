@@ -6,7 +6,7 @@ const HeaderNavigation = () => {
 
   const executeScroll = menuItem => {
     const myRef = refs?.current?.find(item => item?.key === menuItem);
-    myRef.ref?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    myRef?.ref?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   return (
