@@ -5,7 +5,7 @@ import { AppContext } from '../context/globalState';
 import missingThumbnail from "../assets/missingThumbnail.png";
 import { getPriceLabel } from '../utils/helpers';
 
-const BookCard = ({ book }) => {
+function BookCard({ book }) {
   const { cartItems, setCartItems } = useContext(AppContext);
 
   const addBook = book => {
@@ -65,4 +65,4 @@ const BookCard = ({ book }) => {
   );
 }
 
-export default BookCard;
+export default React.memo(BookCard);
