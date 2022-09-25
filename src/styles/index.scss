@@ -6,6 +6,8 @@
 @import './components/form';
 @import './components/header';
 @import './components/text';
+@import './components/bookCard';
+@import './components/antd';
 
 // pages
 @import './pages/landing';
@@ -44,11 +46,12 @@ button,
 tr,
 td,
 th {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
+  overflow-wrap: break-word;
 }
 
 label {
@@ -64,11 +67,6 @@ label {
   min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  color: $link-color;
-}
-
 code {
   user-select: text;
   background: rgba(0, 0, 0, 0.05);
@@ -81,4 +79,35 @@ code {
 
 label {
   font-weight: 500;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+button {
+  outline: none !important;
+}
+
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+#root {
+  overflow-x: scroll;
+}
+
+.spinner {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	left: calc(50% + 120px);
 }

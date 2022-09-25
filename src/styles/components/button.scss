@@ -1,0 +1,43 @@
+button {
+  cursor: pointer;
+  outline: none;
+  outline-style: none;
+  border: none;
+  user-select: none;
+  border-radius: 0.6rem;
+  box-sizing: border-box;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+
+  transition: background .3s;
+  color: $white;
+  background: $btn-background-color;
+
+  &:hover {
+    background: $btn-background-color-hover;
+  }
+
+  &:disabled {
+      background: #E0E0E0;
+      color: #9E9E9E;
+      cursor: not-allowed;
+  }
+
+  &.primary {
+    width: 140px;
+    height: 35px;
+  }
+
+  &.search {
+    width: 163px;
+    height: 44px;
+    padding: 0 17px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+}
+

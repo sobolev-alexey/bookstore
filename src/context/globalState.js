@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { fetchBooks, fetchCovers } from '../utils/booksHelper';
 export const AppContext = React.createContext({});
 
 const GlobalState = ({ children }) => {
   const [isLoading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [refs, setRefs] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const booksObj = await fetchBooks();
+      const booksObjResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/books`);
+      const booksObj = await booksObjResponse.json();
+      setBooks(booksObj);
+      setFilteredBooks(booksObj);
       setLoading(false);
-      const bookDataArr = booksObj?.map(book => ({
-        title: book?.Title,
-        author: book?.Author,
-        genre: book?.Genre,
-      }));
-      setBooks(bookDataArr);
-      const bookData = await fetchCovers(booksObj.slice(0, 5));
-      setBooks(bookData);
     }
 
     fetchData();
@@ -26,7 +23,13 @@ const GlobalState = ({ children }) => {
   return (
     <AppContext.Provider value={{ 
       isLoading,
-      books
+      refs,
+      books, 
+      filteredBooks,
+      setFilteredBooks,
+      setCartItems,
+      cartItems,
+      setRefs,
     }}>
       {children}
     </AppContext.Provider>

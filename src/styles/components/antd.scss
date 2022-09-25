@@ -1,0 +1,56 @@
+.ant-input-affix-wrapper:hover, 
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
+.ant-input-affix-wrapper-focused, .ant-input-affix-wrapper:focus {
+  border-color: unset;
+  border-width: unset;
+  box-shadow: unset;
+  border: unset;
+}
+
+.ant-rate-star:not(:last-child) {
+  margin-right: 3px;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-prev:focus,
+.ant-carousel .slick-prev:hover {
+  left: 10px;
+  z-index: 20;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  color: $base-color;
+  cursor: pointer;
+  width: 35px;
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 101%;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-next:focus,
+.ant-carousel .slick-next:hover {
+  right: 10px;
+  z-index: 20;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  color: $base-color;
+  cursor: pointer;
+  width: 35px;
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 101%;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

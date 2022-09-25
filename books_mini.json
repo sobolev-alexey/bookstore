@@ -1,0 +1,1974 @@
+[
+	{
+		"Author": "Jaideva C. Goswami",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=zN2JJPeUYfcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 111.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Fundamentals of Wavelets",
+		"ID": "5djHwiR"
+	},
+	{
+		"Author": "John W. Foreman",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=CfjpAQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 28.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Data Smart",
+		"ID": "OP7Qf3I"
+	},
+	{
+		"Author": "Stephen Hawking",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=Lu83DgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 2,
+		"ListPrice": {
+			"amount": 12.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "God Created The Integers",
+		"ID": "WWgTj9Y"
+	},
+	{
+		"Author": "Steven D. Levitt",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=P5evtwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "SuperFreakonomics",
+		"ID": "jejTIw2"
+	},
+	{
+		"Author": "Edward W. Said",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=npF5BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 3,
+		"ListPrice": {
+			"amount": 13.45,
+			"currencyCode": "EUR"
+		},
+		"Title": "Orientalism",
+		"ID": "wLGU4zB"
+	},
+	{
+		"Author": "Vladimir Vapnik",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=EqgACAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 213.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Nature of Statistical Learning Theory",
+		"ID": "t4FFBUt"
+	},
+	{
+		"Author": "Vapal Pangunni Menon",
+		"Genre": "nonfiction",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"Title": "Story of the Integration of the Indian States",
+		"ID": "4cp4TbE"
+	},
+	{
+		"Author": "Leonard Mlodinow",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=MPuUDtFH0L4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 45,
+		"ListPrice": {
+			"amount": 9.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Drunkard's Walk",
+		"ID": "ZTTrVWD"
+	},
+	{
+		"Author": "Frank Y. Shih",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=HCo1tAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Image Processing and Mathematical Morphology",
+		"ID": "u1XlCKM"
+	},
+	{
+		"Author": "Maria Konnikova",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=01Q2nwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 11,
+		"Title": "Mastermind",
+		"ID": "lPn3cMf"
+	},
+	{
+		"Author": "Sebastian Gutierrez",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=86jhBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Data Scientists at Work",
+		"ID": "pi4BB9t"
+	},
+	{
+		"Author": "Kurt Vonnegut",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=7jnkli7iAjMC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1687,
+		"Title": "Slaughterhouse-Five",
+		"ID": "e4FfRAR"
+	},
+	{
+		"Author": "Cédric Villani",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=SAY3jgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 1,
+		"Title": "Birth of a Theorem",
+		"ID": "MMormgi"
+	},
+	{
+		"Author": "Harold Abelson",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=1DrQngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 4,
+		"Title": "Structure and Interpretation of Computer Programs",
+		"ID": "NvnCYdI"
+	},
+	{
+		"Author": "Abraham Eraly",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=vyEoAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 2,
+		"Title": "The Age of Wrath",
+		"ID": "wBeVhBu"
+	},
+	{
+		"Author": "Franz Kafka",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=3z0ojgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 33,
+		"Title": "The Trial",
+		"ID": "6f1zZRi"
+	},
+	{
+		"Author": "John Pratt",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=Ur5NEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Introduction to Statistical Decision Theory",
+		"ID": "wMPTp4R"
+	},
+	{
+		"Author": "Cram101 Textbook Reviews",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=ME5UYAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Outlines and Highlights for Handbook of Statistical Analysis and Data Mining Applications by Robert Nisbet",
+		"ID": "gRIpz3D"
+	},
+	{
+		"Author": "H. G. Wells",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=vEpOEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 3,
+		"ListPrice": {
+			"amount": 6.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "The New Machiavelli",
+		"ID": "pp13an3"
+	},
+	{
+		"Author": "Werner Heisenberg",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=ZJjuAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 3,
+		"Title": "Physics and Philosophy",
+		"ID": "55yryKG"
+	},
+	{
+		"Author": "Andy Oram",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=7iHWwAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 2,
+		"Title": "Making Software",
+		"ID": "3wzp2y1"
+	},
+	{
+		"Author": "Terence Tao",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=oybkDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 48.78,
+			"currencyCode": "EUR"
+		},
+		"Title": "Analysis II",
+		"ID": "16Qn6DI"
+	},
+	{
+		"Author": "Drew Conway",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=hK3icX75MdQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Machine Learning for Hackers",
+		"ID": "nqvmLlZ"
+	},
+	{
+		"Author": "Nate Silver",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=SI-VqAT4_hYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 41,
+		"Title": "The Signal and the Noise",
+		"ID": "Sk0hDgY"
+	},
+	{
+		"Author": "Wes McKinney",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=dq72DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 39.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Datenanalyse mit Python",
+		"ID": "ifhw1GN"
+	},
+	{
+		"Author": "Thomas H. Cormen",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=aefUBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 2,
+		"Title": "Introduction to Algorithms",
+		"ID": "9le1Od8"
+	},
+	{
+		"Author": "Siddhartha Deb",
+		"Genre": "nonfiction",
+		"Title": "The Beautiful & the Damned",
+		"ID": "WEm7CVM"
+	},
+	{
+		"Author": "Albert Camus",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=E4-rnAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The Outsider",
+		"ID": "XuIfr5s"
+	},
+	{
+		"Author": "Arthur Conan Doyle",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=J954DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 51,
+		"ListPrice": {
+			"amount": 1.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Complete Sherlock Holmes",
+		"ID": "28OFPJe"
+	},
+	{
+		"Author": "Arthur Conan Doyle",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=EBPjAQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 4,
+		"Title": "The Complete Sherlock Holmes",
+		"ID": "LIe12I3"
+	},
+	{
+		"Author": "Adam Smith",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=cZsdAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The Wealth of Nations",
+		"ID": "Me9zKGa"
+	},
+	{
+		"Author": "Ken Follett",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=VB7IAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 3319,
+		"ListPrice": {
+			"amount": 11.2,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Pillars of the Earth",
+		"ID": "VrPGAxZ"
+	},
+	{
+		"Author": "Adolf Hitler",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=fY6VzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Mein Kampf",
+		"ID": "c5ssoRu"
+	},
+	{
+		"Author": "Fritjof Capra",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=H0pwCjzBW18C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "The Tao of Physics",
+		"ID": "6KcnxId"
+	},
+	{
+		"Author": "Richard P. Feynman",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=_gA_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 3665,
+		"ListPrice": {
+			"amount": 10.7,
+			"currencyCode": "EUR"
+		},
+		"Title": "\"Surely You're Joking, Mr. Feynman!\": Adventures of a Curious Character",
+		"ID": "IqqgPTe"
+	},
+	{
+		"Author": "Ernest Hemingway",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=2_XH0Z81_ZEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 11,
+		"ListPrice": {
+			"amount": 11.86,
+			"currencyCode": "EUR"
+		},
+		"Title": "A Farewell to Arms",
+		"ID": "hwSHYHS"
+	},
+	{
+		"Author": "Frederick Forsyth",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=0ynmkoWnMJMC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The Veteran and Other Stories",
+		"ID": "8olIZJE"
+	},
+	{
+		"Author": "Jeffrey Archer",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=rCyPIhF3FcwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 19,
+		"ListPrice": {
+			"amount": 10.42,
+			"currencyCode": "EUR"
+		},
+		"Title": "False Impression",
+		"ID": "t8l14EW"
+	},
+	{
+		"Author": "Randy Pausch",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=xX1rAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 221,
+		"ListPrice": {
+			"amount": 8.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Last Lecture",
+		"ID": "aOhWIgG"
+	},
+	{
+		"Author": "Ayn Rand",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=cwCF_j3aQ9gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 14.56,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Return of the Primitive",
+		"ID": "R5asRhl"
+	},
+	{
+		"Author": "Michael Crichton",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=V5s14nks9I8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1711,
+		"ListPrice": {
+			"amount": 9.7,
+			"currencyCode": "EUR"
+		},
+		"Title": "Jurassic Park",
+		"ID": "PRo63LR"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=ryRlIljLYRYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 4,
+		"ListPrice": {
+			"amount": 6.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "A Russian Journal",
+		"ID": "xJCcw55"
+	},
+	{
+		"Author": "Edgar Allan Poe",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=61_xDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 18,
+		"ListPrice": {
+			"amount": 6.41,
+			"currencyCode": "EUR"
+		},
+		"Title": "Tales of Mystery and Imagination",
+		"ID": "9swmwOM"
+	},
+	{
+		"Author": "Steven D. Levitt",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=kxsQhM4D8uIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 3774,
+		"ListPrice": {
+			"amount": 9.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "Freakonomics",
+		"ID": "fbvPKBf"
+	},
+	{
+		"Author": "Fritjof Capra",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=FVcqAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 3,
+		"Title": "The Hidden Connections",
+		"ID": "2cVOs7f"
+	},
+	{
+		"Author": "Will Durant",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=Hw1pEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 28,
+		"ListPrice": {
+			"amount": 11.61,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Story of Philosophy",
+		"ID": "LzzlN34"
+	},
+	{
+		"Author": "Dr. Jaquir Iqbal",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=nrR9D_ydGwoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 2,
+		"Title": "Islamic Financial Management",
+		"ID": "BvchVvI"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Z413QTHHXCoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 7,
+		"ListPrice": {
+			"amount": 10.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Journal of a Novel",
+		"ID": "TIhkXhk"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=2b1v1FnwOWEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 6,
+		"Title": "Once There Was a War",
+		"ID": "oRd5SGl"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=X4RlngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 47,
+		"Title": "The Moon Is Down",
+		"ID": "ypJpOdi"
+	},
+	{
+		"Author": "John Grisham",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=3b0BtJ8sNJ8C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 42,
+		"Title": "The Brethren",
+		"ID": "JOH307D"
+	},
+	{
+		"Author": "V. S. Naipaul",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=BWmljUbQhwkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 4,
+		"ListPrice": {
+			"amount": 11.2,
+			"currencyCode": "EUR"
+		},
+		"Title": "In a Free State",
+		"ID": "A4ZntGr"
+	},
+	{
+		"Author": "Joseph Heller",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=6wouAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Catch 22",
+		"ID": "jMVZehW"
+	},
+	{
+		"Author": "Robert Andrews",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=VK0vR4fsaigC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 17.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The New Penguin Dictionary of Modern Quotations",
+		"ID": "YjGUNDj"
+	},
+	{
+		"Author": "Willi Winkler",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Z99qAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 9.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Bob Dylan",
+		"ID": "kqYWB5h"
+	},
+	{
+		"Author": "Madan M. Gupta",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=_BNXCNC1kfQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 147.56,
+			"currencyCode": "EUR"
+		},
+		"Title": "Soft Computing and Intelligent Systems",
+		"ID": "YqPUVGA"
+	},
+	{
+		"Author": "Alfred William Stonier",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=9zBBAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "A Textbook of Economic Theory",
+		"ID": "1XCZOUj"
+	},
+	{
+		"Author": "William H. Greene",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=RRq7AAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Econometric Analysis",
+		"ID": "ax0pyq5"
+	},
+	{
+		"Author": "Adrian Kaehler",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=c7UXswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Learning OpenCV 3",
+		"ID": "EqlRP4v"
+	},
+	{
+		"Author": "Aaron M.. Tenenbaum",
+		"Genre": "tech",
+		"AverageRating": 4.5,
+		"RatingsCount": 3,
+		"Title": "Data Structures Using C",
+		"ID": "amU6Cp7"
+	},
+	{
+		"Author": "David A. Forsyth",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=pAWpBwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Computer Vision: A Modern Approach",
+		"ID": "Mx9Xf9F"
+	},
+	{
+		"Author": "Herbert Taub",
+		"Genre": "tech",
+		"Title": "Principles of Communication Systems",
+		"ID": "slwLXTV"
+	},
+	{
+		"Author": "Yashavant P. Kanetkar",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=7HrjAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 21,
+		"Title": "Let Us C",
+		"ID": "9eZypWj"
+	},
+	{
+		"Author": "Jonathan Stroud",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Lk2SbKlXC7oC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 45,
+		"Title": "Bartimaeus: Amulet of Samarkand, The (Book One)",
+		"ID": "qINJPIU"
+	},
+	{
+		"Author": "Fyodor Dostoyevsky",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=nVGKDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 2,
+		"Title": "Crime and Punishment",
+		"ID": "Aeg0D9g"
+	},
+	{
+		"Author": "Dan Brown",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=yTm_C8TWpkcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 385,
+		"Title": "Angels & Demons",
+		"ID": "NfaG2WM"
+	},
+	{
+		"Author": "Amartya Sen",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=gcGiwyBS3YwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 8,
+		"ListPrice": {
+			"amount": 9.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Argumentative Indian",
+		"ID": "G5n8qit"
+	},
+	{
+		"Author": "Amitav Ghosh",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=bhmQtJu5gsEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 115,
+		"Title": "Sea Of Poppies (PB)",
+		"ID": "J7ItE6V"
+	},
+	{
+		"Author": "Amartya Sen",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=E4zAhxHdW3sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 4,
+		"ListPrice": {
+			"amount": 10.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Idea of Justice",
+		"ID": "cmilnb5"
+	},
+	{
+		"Author": "Rita Reinheimer-Wolf",
+		"Genre": "fiction",
+		"Title": "A Raisin in the Sun von Lorraine Hansberry: Lektüreschlüssel mit Inhaltsangabe, Interpretation, Prüfungsaufgaben mit Lösungen, Lernglossar. (Reclam Lektüreschlüssel XL)",
+		"ID": "XzF2iNw"
+	},
+	{
+		"Author": "Carl Bernstein",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=EEA7CQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "All the President's Men",
+		"ID": "yo2D060"
+	},
+	{
+		"Author": "Jeffrey Archer",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=rHQb8rXCUKgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 39,
+		"ListPrice": {
+			"amount": 11.58,
+			"currencyCode": "EUR"
+		},
+		"Title": "A Prisoner of Birth",
+		"ID": "kYQfz9z"
+	},
+	{
+		"Author": "Kuldip Nayar",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=dpbLAQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Scoop! : Inside Stories From The Partition To The Present",
+		"ID": "rNIpFBI"
+	},
+	{
+		"Author": "Sunita Deshpande",
+		"Genre": "nonfiction",
+		"Title": "Ahe manohar tari",
+		"ID": "fuTL2Sm"
+	},
+	{
+		"Author": "William Dalrymple",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=PwfWwAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 14,
+		"Title": "The Last Mughal",
+		"ID": "Rr0tqz6"
+	},
+	{
+		"Author": "Kotaro Suzumura",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=Et6vCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 117.69,
+			"currencyCode": "EUR"
+		},
+		"Title": "Social Choice Re-examined",
+		"ID": "0pfl4PT"
+	},
+	{
+		"Author": "Peter Dickinson",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Iw-EPQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Die längste Zeit",
+		"ID": "cC9mxje"
+	},
+	{
+		"Author": "Peter Dickinson",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Iw-EPQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Die längste Zeit",
+		"ID": "gC0MZ4A"
+	},
+	{
+		"Author": "P. L. Deshpande",
+		"Genre": "nonfiction",
+		"Title": "Aghal Paghal",
+		"ID": "eX9Ih7P"
+	},
+	{
+		"Author": "Lama Ole Nydahl",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=_TxtAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 9.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Buddha und die Liebe",
+		"ID": "IvbmR2l"
+	},
+	{
+		"Author": "Guy St. Clair",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=KSYHYClnd_kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 152.95,
+			"currencyCode": "EUR"
+		},
+		"Title": "Beyond Degrees",
+		"ID": "V2Y4Nzy"
+	},
+	{
+		"Author": "V. P. KALE",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=i55HAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 1,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 3.07,
+			"currencyCode": "EUR"
+		},
+		"Title": "MANASA",
+		"ID": "ArfhDYP"
+	},
+	{
+		"Author": "Shashi Tharoor",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=fRSC_uTGhZ8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 9,
+		"Title": "India",
+		"ID": "HGDHrhu"
+	},
+	{
+		"Author": "H. P. Lovecraft;Rudyard Kipling;William Hope Hodgson",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=g1NlEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 7.79,
+			"currencyCode": "EUR"
+		},
+		"Title": "World's Greatest Horror Stories: Collection of 42 Best Horror Novels of All Time",
+		"ID": "sZCeIfV"
+	},
+	{
+		"Author": "Shashi Tharoor",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=9eD7DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 9,
+		"Title": "The Great Indian Novel",
+		"ID": "WlYg5Qs"
+	},
+	{
+		"Author": "Larry Collins",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=jsoS0Dqn01UC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 6,
+		"Title": "O Jerusalem",
+		"ID": "OWstudW"
+	},
+	{
+		"Author": "Dominique Lapierre",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Tqn6IEGXshwC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The City of Joy",
+		"ID": "3pWEoIo"
+	},
+	{
+		"Author": "Larry Collins",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=f7BHAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 21,
+		"Title": "Freedom at Midnight",
+		"ID": "2ZtwS2O"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=gzNVrIRJSIoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 51,
+		"ListPrice": {
+			"amount": 8.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Winter of Our Discontent",
+		"ID": "M7uuYyH"
+	},
+	{
+		"Author": "Bertrand Russell",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=RoGMAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 18.18,
+			"currencyCode": "EUR"
+		},
+		"Title": "On Education",
+		"ID": "Ns99eNS"
+	},
+	{
+		"Author": "Sam Harris",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=lvsiwZFucKoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 22,
+		"Title": "Free Will",
+		"ID": "plmrqIZ"
+	},
+	{
+		"Author": "Shashi Tharoor",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=WLUCAC5eDJAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1,
+		"Title": "Bookless In Baghdad",
+		"ID": "TDSZnJ2"
+	},
+	{
+		"Author": "Erle Stanley Gardner",
+		"Genre": "fiction",
+		"Title": "Das Geheimnis des Kanarienvogels (The case of the lame canary, dt.-Übertr. aus d. Engl. Neuaufl.)",
+		"ID": "rV4SPHV"
+	},
+	{
+		"Author": "Stephen Hawking",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=59x0PgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 6,
+		"Title": "The Theory Of Everything (With Cd)",
+		"ID": "EkclprX"
+	},
+	{
+		"Author": "Peter Ferdinand Drucker",
+		"Genre": "science",
+		"Title": "The New Markets, and Other Essays",
+		"ID": "EIV8Esc"
+	},
+	{
+		"Author": "David Bodanis",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=c-gfwgw1JSEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 9,
+		"ListPrice": {
+			"amount": 15.7,
+			"currencyCode": "EUR"
+		},
+		"Title": "Electric Universe",
+		"ID": "tksoB4U"
+	},
+	{
+		"Author": "Victor Hugo",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=hZtfvHDFHE4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 2,
+		"Title": "The Hunchback of Notre-Dame",
+		"ID": "rRqzQ2Q"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=nrqjS29s1hEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 9,
+		"ListPrice": {
+			"amount": 6.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Burning Bright",
+		"ID": "qTLhrlo"
+	},
+	{
+		"Author": "Peter F. Drucker",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=A1VtBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "The Age of Discontinuity",
+		"ID": "n19CASW"
+	},
+	{
+		"Author": "Richard Gordon",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=fGuvDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 6.41,
+			"currencyCode": "EUR"
+		},
+		"Title": "Doctor In The Nude",
+		"ID": "XIBABD6"
+	},
+	{
+		"Author": "George Orwell",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=kudsAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 9.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Erledigt in Paris und London",
+		"ID": "Z4j3kKl"
+	},
+	{
+		"Author": "Amartya Sen",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=Xpf8CQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 2.5,
+		"RatingsCount": 2,
+		"ListPrice": {
+			"amount": 9.49,
+			"currencyCode": "EUR"
+		},
+		"Title": "Identity and Violence",
+		"ID": "bPPYSvE"
+	},
+	{
+		"Author": "William Dalrymple",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=EoJoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 1,
+		"RatingsCount": 1,
+		"Title": "Kohinoor",
+		"ID": "hmXt8Gl"
+	},
+	{
+		"Author": "Grapevine Publishers",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=X0fizgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "World's Greatest Short Stories",
+		"ID": "J71x7QB"
+	},
+	{
+		"Author": "Lee A. Iacocca",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=JJ38Zex0RqYC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 2,
+		"Title": "Talking Straight",
+		"ID": "4VxLiY7"
+	},
+	{
+		"Author": "David Malcolm",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=uX9D0Na7hiMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 1,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 34.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "A Companion to the British and Irish Short Story",
+		"ID": "OiPVjap"
+	},
+	{
+		"Author": "Frederick Forsyth",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=pMKtAAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Das Phantom von Manhattan",
+		"ID": "qgfiwgd"
+	},
+	{
+		"Author": "William Somerset Maugham",
+		"Genre": "fiction",
+		"Title": "Ashenden Or The British Agent",
+		"ID": "ISgiWDg"
+	},
+	{
+		"Author": "Robert M. Pirsig",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=M69poeV1UhoC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Zen and the Art of Motorcycle Maintenance",
+		"ID": "2yKJzhD"
+	},
+	{
+		"Author": "Robert Fisk",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=SJHtAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 19,
+		"Title": "The Great War for Civilisation",
+		"ID": "Whj8ggy"
+	},
+	{
+		"Author": "Robert Mayhew",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=eXGK_JTrlTMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Essays on Ayn Rand's We the Living",
+		"ID": "1rgjFy5"
+	},
+	{
+		"Author": "Amir D Aczel",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=ZM8_DgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 2.5,
+		"RatingsCount": 2,
+		"ListPrice": {
+			"amount": 7.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Artist and the Mathematician",
+		"ID": "2TLEA0v"
+	},
+	{
+		"Author": "Bertrand Russell",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=sIHMdQ4X8GkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 17,
+		"Title": "History of Western Philosophy",
+		"ID": "FyCpzsG"
+	},
+	{
+		"Author": "Ursula K. Le Guin",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Zk7xCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 20,
+		"ListPrice": {
+			"amount": 7.9,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Unreal and the Real",
+		"ID": "SfHgCld"
+	},
+	{
+		"Author": "Amartya Sen",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=rwcUEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Rationality and Freedom",
+		"ID": "S8wfyWr"
+	},
+	{
+		"Author": "Samuel P. Huntington",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=msw1YgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 11,
+		"Title": "The Clash of Civilizations and the Remaking of World Order",
+		"ID": "nLcijcH"
+	},
+	{
+		"Author": "Fritjof Capra",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=_hYSAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 3,
+		"Title": "Uncommon Wisdom",
+		"ID": "a6HY8uU"
+	},
+	{
+		"Author": "Richard Bach",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=u1W3c1TBKMcC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 14,
+		"Title": "One",
+		"ID": "bEkcCtX"
+	},
+	{
+		"Author": "Petr Nikolaevich Fedoseev",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Sp5IAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Karl Marx",
+		"ID": "xEzyzrz"
+	},
+	{
+		"Author": "E. R. Braithwaite",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=plkdGhCIdp8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 14,
+		"ListPrice": {
+			"amount": 8.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "To Sir With Love",
+		"ID": "JZZQL6Y"
+	},
+	{
+		"Author": "V. S. Naipaul",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=cNwarpJxp5YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 2.5,
+		"RatingsCount": 11,
+		"ListPrice": {
+			"amount": 14.56,
+			"currencyCode": "EUR"
+		},
+		"Title": "Half a Life",
+		"ID": "6G0OUWt"
+	},
+	{
+		"Author": "Jawaharlal Nehru",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=2WWgAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 4,
+		"Title": "The Discovery of India",
+		"ID": "NYHbUrm"
+	},
+	{
+		"Author": "Ulrich Horst",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Jj4vAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Zwischen Konziliarismus und Reformation",
+		"ID": "2GHOvnK"
+	},
+	{
+		"Author": "Bertrand Russell",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=n-Zamjv7TkUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1,
+		"Title": "Unpopular Essays",
+		"ID": "jLt1njK"
+	},
+	{
+		"Author": "Frederick Forsyth",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=ElLHbZyjMRIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 7,
+		"ListPrice": {
+			"amount": 6.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Deceiver",
+		"ID": "gA7emi2"
+	},
+	{
+		"Author": "Bob Woodward",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=kO2ySFSqRaQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1,
+		"Title": "Veil",
+		"ID": "c7UoQ7S"
+	},
+	{
+		"Author": "P. L. Deshpande",
+		"Genre": "nonfiction",
+		"Title": "Char Shabda",
+		"ID": "D1pHWiX"
+	},
+	{
+		"Author": "Gerald Durrell",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=ObQaAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 2,
+		"Title": "Rosy is My Relative",
+		"ID": "ReHLh3e"
+	},
+	{
+		"Author": "W. Somerset Maugham",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=G8gsAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 23,
+		"Title": "The Moon and Sixpence",
+		"ID": "6SLc1GB"
+	},
+	{
+		"Author": "Kenneth R. Minogue",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=EUPGbwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Contemporary Political Philosophers (Routledge Revivals)",
+		"ID": "2rCiOtV"
+	},
+	{
+		"Author": "H. G. Wells",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=fqLJDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 1.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "A Short History of the World",
+		"ID": "JeKH66R"
+	},
+	{
+		"Author": "W. Somerset Maugham",
+		"Genre": "fiction",
+		"Title": "The Trembling of a Leaf",
+		"ID": "dgYnBsY"
+	},
+	{
+		"Author": "Richard Gordon",
+		"Genre": "fiction",
+		"Title": "Doctor on the brain",
+		"ID": "Js6LPa1"
+	},
+	{
+		"Author": "Simon Singh",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=feg_AQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 7,
+		"Title": "The Simpsons and Their Mathematical Secrets",
+		"ID": "hNBxdkZ"
+	},
+	{
+		"Author": "Richard O. Duda",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=Br33IRC3PkQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 163.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Pattern Classification",
+		"ID": "SegJMBC"
+	},
+	{
+		"Author": "Thomas L. Friedman",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=877DR3un9rIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 18,
+		"ListPrice": {
+			"amount": 17.27,
+			"currencyCode": "EUR"
+		},
+		"Title": "From Beirut to Jerusalem",
+		"ID": "xSbYS6I"
+	},
+	{
+		"Author": "Simon Singh",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=o3YbiVuTg70C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 10,
+		"ListPrice": {
+			"amount": 16.81,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Code Book",
+		"ID": "R6tn2Dn"
+	},
+	{
+		"Author": "Robert Fisk",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Jupaz0z_4QwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 10.59,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Age of the Warrior: Selected Writings",
+		"ID": "mO6e6a2"
+	},
+	{
+		"Author": "Grant Morrison",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=XWSRDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 1,
+		"RatingsCount": 5,
+		"ListPrice": {
+			"amount": 25.64,
+			"currencyCode": "EUR"
+		},
+		"Title": "Final Crisis (DC Essential Edition)",
+		"ID": "qWQZRFm"
+	},
+	{
+		"Author": "Alan Moore",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=dejeAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 81,
+		"ListPrice": {
+			"amount": 4.1,
+			"currencyCode": "EUR"
+		},
+		"Title": "Batman: The Killing Joke",
+		"ID": "2tCheIm"
+	},
+	{
+		"Author": "Johns Geoff",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=6YpTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 12.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Flashpoint",
+		"ID": "WxFg5BJ"
+	},
+	{
+		"Author": "Geoff Johns",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=lorNtwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 29,
+		"Title": "Batman",
+		"ID": "FsDTSxF"
+	},
+	{
+		"Author": "Marv Wolfman",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=PQRaAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Crisis on Infinite Earths",
+		"ID": "yr8Adob"
+	},
+	{
+		"Author": "Keith Devlin",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=Wm6SCRVby0kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"ListPrice": {
+			"amount": 12.33,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Numbers Behind NUMB3RS",
+		"ID": "ptuIjhi"
+	},
+	{
+		"Author": "J. Michael Straczynski",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=GJbfZwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Earth One",
+		"ID": "WpolndB"
+	},
+	{
+		"Author": "J. Michael Straczynski",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=3fPjAAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 3,
+		"ListPrice": {
+			"amount": 15.38,
+			"currencyCode": "EUR"
+		},
+		"Title": "Superman: Earth One Vol. 2",
+		"ID": "gLGujlz"
+	},
+	{
+		"Author": "Geoff Johns",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=In6VmwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Justice League",
+		"ID": "HKXaNI0"
+	},
+	{
+		"Author": "Geoff Johns",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=PU-1AAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 8,
+		"ListPrice": {
+			"amount": 17.43,
+			"currencyCode": "EUR"
+		},
+		"Title": "Justice League Vol. 2: The Villain's Journey (The New 52)",
+		"ID": "nDlNW36"
+	},
+	{
+		"Author": "Roger Stern",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=-zKi2nVJPFkC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"Title": "The Death and Life of Superman",
+		"ID": "XJopPii"
+	},
+	{
+		"Author": "John Ridley",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=dZYvzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The Other History of the DC Universe",
+		"ID": "7hW9duk"
+	},
+	{
+		"Author": "Jeph Loeb",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=XGDCoAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Batman Noir",
+		"ID": "FSWh5eB"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=jrbmSemfAdYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 3,
+		"ListPrice": {
+			"amount": 8.97,
+			"currencyCode": "EUR"
+		},
+		"Title": "Steinbeck",
+		"ID": "cMGEse8"
+	},
+	{
+		"Author": "James Gleick",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=617JSFW0D2kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 67,
+		"ListPrice": {
+			"amount": 16.81,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Information",
+		"ID": "IXf1pzV"
+	},
+	{
+		"Author": "Judith Rühl",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=ANAiBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 35.96,
+			"currencyCode": "EUR"
+		},
+		"Title": "Vertragliche Gestaltung von Innovationskooperationen",
+		"ID": "BOLFn3J"
+	},
+	{
+		"Author": "Thomas M. Cover",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=j0DBDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Elements of Information Theory",
+		"ID": "THP52qI"
+	},
+	{
+		"Author": "Muhammad H. Rashid",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=KRD9mAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Power Electronics",
+		"ID": "PzoOyU6"
+	},
+	{
+		"Author": "Ned Mohan",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=ToYoAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Power Electronics",
+		"ID": "IZTOuaq"
+	},
+	{
+		"Author": "Simon S. Haykin",
+		"Genre": "tech",
+		"Title": "Neural Networks and Learning Machines",
+		"ID": "bzKY3xa"
+	},
+	{
+		"Author": "John Steinbeck",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=hNisMz5W1DQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 4,
+		"ListPrice": {
+			"amount": 8.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Grapes of Wrath",
+		"ID": "lSGAJNe"
+	},
+	{
+		"Author": "Dr. Jaquir Iqbal",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=nrR9D_ydGwoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 2,
+		"Title": "Islamic Financial Management",
+		"ID": "3wvYJFs"
+	},
+	{
+		"Author": "Vladimir Vapnik",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=EqgACAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 213.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Nature of Statistical Learning Theory",
+		"ID": "Q4EUstC"
+	},
+	{
+		"Author": "Alex Rutherford",
+		"Genre": "nonfiction",
+		"Title": "Empire of the Moghul",
+		"ID": "BpD3nne"
+	},
+	{
+		"Author": "Alex Rutherford",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=tEjGbwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Brothers at War",
+		"ID": "spDgy16"
+	},
+	{
+		"Author": "Alex Rutherford",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=WX3zPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Raiders from the North",
+		"ID": "sNGs5xv"
+	},
+	{
+		"Author": "Alex Rutherford",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=g2XnnQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "The Empire of the Mogul",
+		"ID": "KoGU5Ky"
+	},
+	{
+		"Author": "Alex Rutherford",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=WX3zPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Raiders from the North",
+		"ID": "7R78IX3"
+	},
+	{
+		"Author": "Avi Shilon",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=6E6_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 34.42,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Decline of the Left Wing in Israel",
+		"ID": "eKYq3EI"
+	},
+	{
+		"Author": "Jim Corbett",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=TaErAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 1,
+		"Title": "The Jim Corbett Omnibus",
+		"ID": "gdQ1DDf"
+	},
+	{
+		"Author": "Jules Verne",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=1kZyen7-PD8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Twenty Thousand Leagues Under the Sea",
+		"ID": "SDbDrR4"
+	},
+	{
+		"Author": "Dr. Jaquir Iqbal",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=nrR9D_ydGwoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 2,
+		"Title": "Islamic Financial Management",
+		"ID": "zwrQdbb"
+	},
+	{
+		"Author": "Peter Dickinson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Iw-EPQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Die längste Zeit",
+		"ID": "l7A5cx1"
+	},
+	{
+		"Author": "Pu. La Deśapāṇḍe",
+		"Genre": "fiction",
+		"Title": "Uralãsuralã",
+		"ID": "uundzVQ"
+	},
+	{
+		"Genre": "tech",
+		"Title": "UNDERSTANDING POINTERS IN C",
+		"ID": "AEUURUl"
+	},
+	{
+		"Author": "Eric Raymond",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=W2t2d2KP6HsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 8,
+		"Title": "The Cathedral & the Bazaar",
+		"ID": "vXspWzi"
+	},
+	{
+		"Author": "Sergio Franco",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=88lQngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Design with Operational Amplifiers and Analog Integrated Circuits",
+		"ID": "iWpHiOa"
+	},
+	{
+		"Author": "Allen Downey",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=ALljDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 34.23,
+			"currencyCode": "EUR"
+		},
+		"Title": "Think Complexity",
+		"ID": "3aYvD6x"
+	},
+	{
+		"Author": "West Morris L.",
+		"Genre": "fiction",
+		"Title": "The Deviĺs Advocate",
+		"ID": "DbwBHS8"
+	},
+	{
+		"Author": "Robert Mayhew",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=-2D6VqMXfFIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 2,
+		"ListPrice": {
+			"amount": 12.33,
+			"currencyCode": "EUR"
+		},
+		"Title": "Ayn Rand Answers: The Best of Her Q & A",
+		"ID": "8E8DOey"
+	},
+	{
+		"Author": "Ayn Rand",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=of0PAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1,
+		"Title": "Philosophy",
+		"ID": "YdgBlPj"
+	},
+	{
+		"Author": "Robert L. Arrington",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=dh-E6oIlCkAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 26.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "The World's Great Philosophers",
+		"ID": "oMfWMUv"
+	},
+	{
+		"Author": "Allen B. Downey",
+		"Genre": "tech",
+		"Cover": "http://books.google.com/books/content?id=K_FhAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "Statistik-Workshop für Programmierer",
+		"ID": "jtATR8S"
+	},
+	{
+		"Author": "Carl Sagan",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=vYpP6zmD9G8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 5,
+		"ListPrice": {
+			"amount": 8.73,
+			"currencyCode": "EUR"
+		},
+		"Title": "Broca's Brain",
+		"ID": "2fbpZUq"
+	},
+	{
+		"Author": "E.T. Bell",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=CdLbAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 16.8,
+			"currencyCode": "EUR"
+		},
+		"Title": "Men of Mathematics",
+		"ID": "PGYIuUK"
+	},
+	{
+		"Author": "Richard Dawkins",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=MkATDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 3,
+		"Title": "The Oxford Book of Modern Science Writing",
+		"ID": "oH6cRbk"
+	},
+	{
+		"Author": "Sudhanshu Ranjan",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=Vf4jAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 39.58,
+			"currencyCode": "EUR"
+		},
+		"Title": "Justice, Judocracy and Democracy in India",
+		"ID": "5dQEaGO"
+	},
+	{
+		"Author": "Subrata K. Mitra",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=A3IvzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Kautilya'S Arthashastra",
+		"ID": "rnhbiBD"
+	},
+	{
+		"Author": "Nani Ardeshir Palkhivala",
+		"Genre": "philosophy",
+		"Title": "We, the People",
+		"ID": "ZKMZvIl"
+	},
+	{
+		"Author": "Nani Ardeshir Palkhivala",
+		"Genre": "philosophy",
+		"Title": "We, the Nation",
+		"ID": "J7nvMgU"
+	},
+	{
+		"Author": "Soli J. Sorabjee",
+		"Genre": "nonfiction",
+		"Title": "Nani Palkhivala",
+		"ID": "bRzdNQF"
+	},
+	{
+		"Author": "S. Hussain Zaidi",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=hphwMwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1,
+		"Title": "Dongri to Dubai",
+		"ID": "UVEmuke"
+	},
+	{
+		"Author": "Peter Ackroyd",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=aKSFDPrhkY4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 15,
+		"Title": "The history of England",
+		"ID": "gjrz2Ew"
+	},
+	{
+		"Author": "William Dalrymple",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=GVvUJVmVr8kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 2,
+		"ListPrice": {
+			"amount": 15.7,
+			"currencyCode": "EUR"
+		},
+		"Title": "City of Djinns",
+		"ID": "96bNgs6"
+	},
+	{
+		"Author": "Fali S Nariman",
+		"Genre": "nonfiction",
+		"Cover": "http://books.google.com/books/content?id=MfxYOQgJ3JUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "India's Legal System",
+		"ID": "sbc3eDl"
+	},
+	{
+		"Author": "Jean P. Sasson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=IJz_NAAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Mayada",
+		"ID": "t0fnxlx"
+	},
+	{
+		"Author": "Peter Dickinson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=SyFtOAIYpl0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 7,
+		"ListPrice": {
+			"amount": 9.26,
+			"currencyCode": "EUR"
+		},
+		"Title": "The Ropemaker",
+		"ID": "roq3nUC"
+	},
+	{
+		"Author": "Dan Brown",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=yTm_C8TWpkcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 385,
+		"Title": "Angels & Demons",
+		"ID": "CEL1MaF"
+	},
+	{
+		"Author": "Lycurgus Butler (M.)",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=cV9ZAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "\"God Has Appointed a Day in which He Will Judge the World in Righteousness by that Man Jesus, Whom He Has Ordained.\"",
+		"ID": "yoMHvmj"
+	},
+	{
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=rqcj-MWEc8QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "The Army Lawyer",
+		"ID": "sJJL1RT"
+	},
+	{
+		"Author": "Niccolò Machiavelli",
+		"Genre": "fiction",
+		"AverageRating": 3.5,
+		"RatingsCount": 90,
+		"Title": "The Prince",
+		"ID": "cYKIC7B"
+	},
+	{
+		"Author": "Aldous Huxley",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=5Ib5wAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 10,
+		"Title": "Eyeless in Gaza",
+		"ID": "TqzDGH6"
+	},
+	{
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=avHMljalfT0C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 50,
+		"Title": "The Tales of Beedle the Bard",
+		"ID": "0atz3ns"
+	},
+	{
+		"Author": "Stieg Larsson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=q9MljgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 2837,
+		"Title": "The Girl with the Dragon Tattoo",
+		"ID": "wF63Kzu"
+	},
+	{
+		"Author": "Stieg Larsson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=Gi_L423XJP8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 5,
+		"RatingsCount": 4,
+		"ListPrice": {
+			"amount": 9.99,
+			"currencyCode": "EUR"
+		},
+		"Title": "Vergebung",
+		"ID": "pXDvWBd"
+	},
+	{
+		"Author": "Stieg Larsson",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=a3b7ngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 3.5,
+		"RatingsCount": 3183,
+		"Title": "The Girl Who Played with Fire",
+		"ID": "GXgxxaV"
+	},
+	{
+		"Author": "Scott Beatty",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=ij-xvNBcwJUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4.5,
+		"RatingsCount": 12,
+		"Title": "The Batman Handbook",
+		"ID": "N4XwoZ7"
+	},
+	{
+		"Author": "Axel Fröhlich",
+		"Genre": "philosophy",
+		"Cover": "http://books.google.com/books/content?id=j4maswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"Title": "Murphy's Law für SCHÜLER",
+		"ID": "u3PZxdC"
+	},
+	{
+		"Author": "Terence Tao",
+		"Genre": "science",
+		"Cover": "http://books.google.com/books/content?id=SzneC0gryvwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"ListPrice": {
+			"amount": 36.38,
+			"currencyCode": "EUR"
+		},
+		"Title": "Structure and Randomness",
+		"ID": "KBicOgJ"
+	},
+	{
+		"Genre": "tech",
+		"Title": "Digital Image Processing",
+		"ID": "DvnXu6e"
+	},
+	{
+		"Author": "George Orwell",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=t7mANAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 1824,
+		"Title": "Animal Farm",
+		"ID": "gVIhHjy"
+	},
+	{
+		"Author": "Fyodor Dostoyevsky",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=2-ly7aL57XgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"Title": "The Idiot",
+		"ID": "CTEDffI"
+	},
+	{
+		"Author": "Charles Dickens",
+		"Genre": "fiction",
+		"Cover": "http://books.google.com/books/content?id=cQtJJ4FbbXgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+		"AverageRating": 4,
+		"RatingsCount": 25,
+		"Title": "A Christmas Carol",
+		"ID": "ozh11mQ"
+	}
+]
