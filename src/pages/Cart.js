@@ -67,21 +67,20 @@ const Cart = () => {
             <span className="cart-total">
               <img src={basketImage} alt="" className="icon"/>&nbsp;
               <p>
-                You have {basket.count} items for a total of 
-                { priceLabel } in your basket.
+                You have {basket.count} items for a total of { priceLabel } in your basket.
               </p>
             </span>
             <span className="action-buttons">
               <img src={paypalImage} alt="Check out with PayPal" className="paypal"/>
-              - Or -
+              &nbsp;&nbsp;&nbsp;&nbsp; - Or -  &nbsp;&nbsp;&nbsp;&nbsp;
               <Link to="/checkout">
                 <button className="primary">Checkout</button>
               </Link>
             </span>
           </div>
-          <p>
-            In placing your order, you are confirming that you have read and agree to our 
-            <u>Terms and Conditions</u>. Please also see our <u>Privacy Policy</u> and our <u>Cookies Policy</u>.</p>
+          <p className="cart-bottom-content">
+            In placing your order, you are confirming that you have read and agree to our <u>Terms and Conditions</u>. Please also see our <u>Privacy Policy</u> and our <u>Cookies Policy</u>.
+          </p>
         </div>
 
         <div className="card cart-main-details-wrapper">
@@ -146,13 +145,13 @@ const Cart = () => {
               <p className="highlight">Total</p>
             </div>
             <div>
-              <p>Free</p>
+              <p>FREE</p>
               <p className="highlight">{ priceLabel }</p>
             </div>
           </div>
           <div className="lower-section">
             <img src={cardsImage} alt="Accepted credit cards" className="cards"/>
-            <div>
+            <div className="cta-wrapper">
               <Link to="/checkout">
                 <button className="primary">Checkout</button>
               </Link>
