@@ -68,6 +68,11 @@ label {
   min-height: 100vh;
 }
 
+::selection {
+  background: $highlight-color;
+  color: $white;
+}
+
 code {
   user-select: text;
   background: rgba(0, 0, 0, 0.05);
