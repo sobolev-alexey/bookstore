@@ -18,7 +18,6 @@ const Details = () => {
   useEffect(() => {
     async function getBook() {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${bookId}`);
-      console.log('Response', response?.data);
       setBook(response?.data);
     }
 
