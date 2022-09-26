@@ -8,6 +8,7 @@ import Cart from './Cart';
 import Layout from './Layout';
 import Search from './Search';
 import Bookshelf from './Bookshelf';
+import EmptyBasket from './EmptyBasket';
 
 export { 
   BookCard,
@@ -20,4 +21,5 @@ export {
   Layout,
   Search,
   Bookshelf,
+  EmptyBasket,
 };
