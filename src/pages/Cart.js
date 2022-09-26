@@ -67,7 +67,7 @@ const Cart = () => {
             <span className="cart-total">
               <img src={basketImage} alt="" className="icon"/>&nbsp;
               <p>
-                You have {basket.count} items for a total of { priceLabel } in your basket.
+                You have {basket.count} items for a total of <b>{ priceLabel }</b> in your basket.
               </p>
             </span>
             <span className="action-buttons">
@@ -89,23 +89,27 @@ const Cart = () => {
             basket.items?.map(book => (
               <div className="book-details-wrapper" key={book.ID}>
                 <div className="book-details-image-wrapper">
-                  <Image 
-                    className="book-image"
-                    src={book?.Cover} 
-                    alt={book?.Title} 
-                    width={130}
-                    preview={false}
-                    fallback={missingImage}
-                  />
+                  <Link to={`/book/${book.ID}`}>
+                    <Image 
+                      className="book-image"
+                      src={book?.Cover} 
+                      alt={book?.Title} 
+                      width={130}
+                      preview={false}
+                      fallback={missingImage}
+                    />
+                  </Link>
                 </div>
                 <div className="book-details-description-wrapper">
-                  <h2 className="title">{book?.Title}</h2>
+                  <Link to={`/book/${book.ID}`}>
+                    <h2 className="title">{book?.Title}</h2>
+                  </Link>
                   <div className="rating">
                     <Rate allowHalf disabled value={book?.AverageRating} defaultValue={book?.AverageRating} />&nbsp;&nbsp;
                     ({book?.RatingsCount || 0})
                   </div>
                   <p className="author">
-                    By (author){`  ${book?.Authors?.join(', ') || book?.Author}`}
+                    Paperback, English &nbsp;&nbsp;|&nbsp;&nbsp; {`${book?.Authors?.join(', ') || book?.Author}`}
                   </p>
                   <br />
                   <p className="price">
@@ -116,6 +120,7 @@ const Cart = () => {
                   <div className="qty">
                     <span>Quantity</span>
                     <Select 
+                      size='large'
                       defaultValue={book.count} 
                       value={book.count} 
                       style={{ width: 75, height: 42 }} 
