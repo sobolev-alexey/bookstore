@@ -55,7 +55,7 @@ function BookCard({ book }) {
           </Link>
         </div>
         <div className="rating">
-          <Rate allowHalf disabled defaultValue={book?.AverageRating || 0} />&nbsp;&nbsp;
+          <Rate allowHalf disabled value={book?.AverageRating || 0} defaultValue={book?.AverageRating || 0} />&nbsp;&nbsp;
           ({book?.RatingsCount || 0})
         </div>
         <div className="price">

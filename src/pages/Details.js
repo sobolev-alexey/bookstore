@@ -56,7 +56,6 @@ const Details = () => {
                 src={book?.Cover} 
                 alt={book?.Title} 
                 width={260}
-                height={400}
                 preview={false}
                 fallback={missingImage}
               />
