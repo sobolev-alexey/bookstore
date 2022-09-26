@@ -6,10 +6,23 @@ import missingThumbnail from "../assets/missingThumbnail.png";
 import { getPriceLabel } from '../utils/helpers';
 
 function BookCard({ book }) {
-  const { cartItems, setCartItems } = useContext(AppContext);
+  const { basket, setBasket } = useContext(AppContext);
 
   const addBook = book => {
-    setCartItems([...cartItems, book]);
+    const myBasket = { ...basket };
+    myBasket.total += book?.ListPrice?.amount;
+    myBasket.count += 1;
+
+    const similarBook = myBasket?.items?.find(item => book.ID === item.ID);
+    if (similarBook) {
+      similarBook.count += 1; 
+    } else {
+      myBasket?.items.push({
+        ...book,
+        count: 1
+      });
+    }
+    setBasket(myBasket);
   }
 
   return (
