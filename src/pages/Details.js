@@ -11,14 +11,13 @@ import { getPriceLabel } from '../utils/helpers';
 
 const Details = () => {
   const { bookId } = useParams();
-  const { books, cartItems, setCartItems } = useContext(AppContext);
+  const { books, basket, setBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
   useEffect(() => {
     async function getBook() {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${bookId}`);
-      console.log('Response', response?.data);
       setBook(response?.data);
     }
 
@@ -27,7 +26,20 @@ const Details = () => {
   }, [bookId]);
 
   const addBook = book => {
-    setCartItems([...cartItems, book]);
+    const myBasket = { ...basket };
+    myBasket.total += book?.ListPrice?.amount;
+    myBasket.count += 1;
+
+    const similarBook = myBasket?.items?.find(item => book.ID === item.ID);
+    if (similarBook) {
+      similarBook.count += 1; 
+    } else {
+      myBasket?.items.push({
+        ...book,
+        count: 1
+      });
+    }
+    setBasket(myBasket);
   }
 
   if (!book) return null;
@@ -43,7 +55,6 @@ const Details = () => {
                 src={book?.Cover} 
                 alt={book?.Title} 
                 width={260}
-                height={400}
                 preview={false}
                 fallback={missingImage}
               />

@@ -5,7 +5,7 @@ const GlobalState = ({ children }) => {
   const [isLoading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  const [basket, setBasket] = useState({ items: [], total: 0, count: 0 });
   const [refs, setRefs] = useState([]);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ const GlobalState = ({ children }) => {
       books, 
       filteredBooks,
       setFilteredBooks,
-      setCartItems,
-      cartItems,
+      setBasket,
+      basket,
       setRefs,
     }}>
       {children}

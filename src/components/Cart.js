@@ -5,13 +5,18 @@ import cartIcon from '../assets/basket-shopping-solid.svg';
 import { getPriceLabel } from '../utils/helpers';
 
 const Cart = () => {
-  const { cartItems } = useContext(AppContext);
   const [total, setTotal] = useState(0);
+  const { basket } = useContext(AppContext);
 
   useEffect(() => {
-    const total = cartItems.reduce((total, item) => total + item?.ListPrice?.amount, 0);
-    setTotal(getPriceLabel(total, cartItems?.[0]?.Country, cartItems?.[0]?.ListPrice?.currencyCode));
-  }, [cartItems?.length]);
+    setTotal(
+      getPriceLabel(
+        basket?.total, 
+        basket.items?.[0]?.Country, 
+        basket.items?.[0]?.ListPrice?.currencyCode
+      )
+    );
+  }, [basket?.total]);
 
   return (
     <div className="cart-wrapper">
@@ -20,7 +25,7 @@ const Cart = () => {
       </div>
       |
       <Link to="/cart" className="cart-link">
-        <span>{cartItems?.length}</span>
+        <span>{basket?.count}</span>
         <img src={cartIcon} alt="cart" className="cart-icon" />
       </Link>
     </div>

@@ -27,6 +27,7 @@ body {
   overflow-x: hidden !important;
   height: 100%;
   width: 100%;
+  background: $background-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -66,6 +67,11 @@ label {
 
 #root {
   min-height: 100vh;
+}
+
+::selection {
+  background: $highlight-color;
+  color: $white;
 }
 
 code {
