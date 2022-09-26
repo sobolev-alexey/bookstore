@@ -11,7 +11,7 @@ import { getPriceLabel } from '../utils/helpers';
 
 const Details = () => {
   const { bookId } = useParams();
-  const { books, cartItems, setCartItems } = useContext(AppContext);
+  const { books, basket, setBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
@@ -27,7 +27,20 @@ const Details = () => {
   }, [bookId]);
 
   const addBook = book => {
-    setCartItems([...cartItems, book]);
+    const myBasket = { ...basket };
+    myBasket.total += book?.ListPrice?.amount;
+    myBasket.count += 1;
+
+    const similarBook = myBasket?.items?.find(item => book.ID === item.ID);
+    if (similarBook) {
+      similarBook.count += 1; 
+    } else {
+      myBasket?.items.push({
+        ...book,
+        count: 1
+      });
+    }
+    setBasket(myBasket);
   }
 
   if (!book) return null;
