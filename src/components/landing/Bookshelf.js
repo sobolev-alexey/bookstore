@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { BookCarousel } from '../components';
-import { AppContext } from '../context/globalState';
+import { BookCarousel } from '..';
+import { AppContext } from '../../context/globalState';
 
 function Bookshelf({ books }) {
   const { setRefs } = useContext(AppContext);

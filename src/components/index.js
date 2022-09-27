@@ -1,14 +1,14 @@
-import BookCard from './BookCard';
-import Header from './Header';
-import HeaderNavigation from './HeaderNavigation';
-import Footer from './Footer';
-import Banner from './Banner';
-import BookCarousel from './BookCarousel';
-import Cart from './Cart';
-import Layout from './Layout';
-import Search from './Search';
-import Bookshelf from './Bookshelf';
-import EmptyBasket from './EmptyBasket';
+import BookCard from './common/BookCard';
+import Header from './header/Header';
+import HeaderNavigation from './header/HeaderNavigation';
+import Footer from './common/Footer';
+import Banner from './landing/Banner';
+import BookCarousel from './common/BookCarousel';
+import Cart from './header/Cart';
+import Layout from './common/Layout';
+import Search from './header/Search';
+import Bookshelf from './landing/Bookshelf';
+import EmptyBasket from './cart/EmptyBasket';
 
 export { 
   BookCard,

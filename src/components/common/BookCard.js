@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Image, Rate } from 'antd';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../context/globalState';
-import missingThumbnail from "../assets/common/missingThumbnail.png";
-import { getPriceLabel } from '../utils/helpers';
+import { AppContext } from '../../context/globalState';
+import missingThumbnail from "../../assets/common/missingThumbnail.png";
+import { getPriceLabel } from '../../utils/helpers';
 
 function BookCard({ book }) {
   const { basket, setBasket } = useContext(AppContext);

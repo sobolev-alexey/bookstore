@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../context/globalState';
-import cartIcon from '../assets/header/basket-shopping-solid.svg';
-import { getPriceLabel } from '../utils/helpers';
+import { AppContext } from '../../context/globalState';
+import cartIcon from '../../assets/header/basket-shopping-solid.svg';
+import { getPriceLabel } from '../../utils/helpers';
 
 const Cart = () => {
   const [total, setTotal] = useState(0);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { BookCard } from '.';
+import { BookCard } from '..';
 
 const BookCarousel = ({ books }) => {
   const pageSize = 7;
