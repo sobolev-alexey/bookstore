@@ -1,9 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Form, Input } from 'antd';
-import { Layout } from '../components';
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { Layout, CheckoutPaymentForm } from '../components';
 import { getPriceLabel } from '../utils/helpers';
 import { AppContext } from '../context/globalState';
 import cartIcon from '../assets/header/basket-shopping-solid.svg';
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
   const { basket } = useContext(AppContext);
@@ -21,9 +25,9 @@ const Checkout = () => {
     );
   }, [basket?.total]);
 
-  const processPayment = async () => {
+  const processPayment = async (payment) => {
     const values = form.getFieldsValue();
-    console.log(values)
+    console.log(values, payment);
   }
 
   return (
@@ -99,7 +103,9 @@ const Checkout = () => {
         </div>
         <div className="card payment-details-wrapper">
           <h3>2. Payment</h3>
-          <button className="primary" onClick={processPayment}>Buy now</button>
+          <Elements stripe={stripePromise}>
+            <CheckoutPaymentForm callback={processPayment} />
+          </Elements>
           <p className="consent">
             In placing your order, you are confirming that you have read and agree to our <u>Terms and Conditions</u>. Please also see our <u>Privacy Policy</u> and our <u>Cookies Policy</u>.
           </p>
