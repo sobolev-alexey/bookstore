@@ -1,0 +1,93 @@
+.stripe-form-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .stripe-form {
+    animation: fade 200ms ease-out;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    .ant-form-item {
+      margin-bottom: 0;
+
+      .ant-form-item-label {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.stripe-submit-button.stripe-submit-button-error {
+  transform: translateY(15px);
+}
+
+.stripe-submit-button.stripe-submit-button-error:active {
+  transform: scale(0.99) translateY(15px);
+}
+
+.stripe-error-message {
+  color: $highlight-color;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  width: 100%;
+  transform: translateY(-15px);
+  opacity: 0;
+  animation: fade 150ms ease-out;
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  will-change: opacity, transform;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stripe-error-message svg {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.stripe-result {
+  margin-top: 50px;
+  text-align: center;
+  animation: fade 200ms ease-out;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.stripe-reset-button {
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 8px 0 8px 15px;
+  background: $white;
+  border: 1px solid  $base-color3;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin: 10px 0 20px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s,-webkit-box-shadow ease-in-out 0.15s;
+
+  &.StripeElement--focus {
+    box-shadow: none;
+    border-color: $base-color;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale3D(0.95, 0.95, 0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale3D(1, 1, 1);
+  }
+}
