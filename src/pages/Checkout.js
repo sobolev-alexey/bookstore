@@ -11,10 +11,11 @@ import cartIcon from '../assets/header/basket-shopping-solid.svg';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const { basket, setBasket } = useContext(AppContext);
   const [form] = Form.useForm();
-  const navigate = useNavigate();
   const [total, setTotal] = useState(0);
+  const [isFormValid, setFormValid] = useState(false);
   const [orderDetails, setOrderDetails] = useState(null);
   const [isStripeAvailable] = useState(!!process.env.REACT_APP_STRIPE_KEY);
 
@@ -35,10 +36,17 @@ const Checkout = () => {
   }, [basket?.total]);
 
   const processPayment = async (paymentDetails) => {
-    const values = form.getFieldsValue();
-    console.log(values, paymentDetails);
     setOrderDetails(paymentDetails);
     setBasket({ items: [], total: 0, count: 0 });
+  }
+
+  const validate = () => {
+    const { name, address1, city, postcode } = form.getFieldsValue();
+    if (name && address1 && city && postcode) {
+      setFormValid(true);
+    } else {
+      setFormValid(false);
+    }
   }
 
   return (
@@ -77,6 +85,7 @@ const Checkout = () => {
                     autoComplete="off"
                     size="large"
                     className="address-form"
+                    onValuesChange={validate}
                   >
                     <Form.Item 
                       name="name"
@@ -138,12 +147,14 @@ const Checkout = () => {
                           amount={basket?.total} 
                           currency={basket.items?.[0]?.ListPrice?.currencyCode} 
                           callback={processPayment} 
+                          isFormValid={isFormValid}
                         />
                       </Elements>
                     ) : (
                       <button 
                         className="primary"
                         onClick={() => processPayment({ orderId: 123456 })}
+                        disabled={!isFormValid}
                       >Buy now</button>
                     )
                   }

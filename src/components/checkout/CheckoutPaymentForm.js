@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { SubmitButton, CardField, ErrorMessage } from "./StripeComponents";
 import callApi from '../../utils/callApi';
 
-const StripeCheckoutForm = ({ amount, currency, callback }) => {
+const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -148,7 +148,7 @@ const StripeCheckoutForm = ({ amount, currency, callback }) => {
         <SubmitButton 
           processing={processing} 
           error={error} 
-          disabled={!stripe || !cardComplete}
+          disabled={!stripe || !cardComplete || !isFormValid}
           type="submit"
         >
           Buy now
