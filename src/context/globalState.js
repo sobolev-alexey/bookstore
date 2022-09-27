@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import callApi from '../utils/callApi';
+
 export const AppContext = React.createContext({});
 
 const GlobalState = ({ children }) => {
@@ -9,16 +11,15 @@ const GlobalState = ({ children }) => {
   const [refs, setRefs] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const booksObjResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/books`);
-      const booksObj = await booksObjResponse.json();
-      setBooks(booksObj);
-      setFilteredBooks(booksObj);
-      setLoading(false);
-    }
-
     fetchData();
   }, []); // eslint-disable-line
+
+  const fetchData = async () => {
+    const data = await callApi('get', 'books');
+    setBooks(data);
+    setFilteredBooks(data);
+    setLoading(false);
+  }
 
   return (
     <AppContext.Provider value={{ 
