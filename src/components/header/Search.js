@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { Form, Input } from 'antd';
 import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
-import { AppContext } from '../context/globalState';
-import { findBooks } from '../utils/helpers';
+import { AppContext } from '../../context/globalState';
+import { findBooks } from '../../utils/helpers';
 
 const SearchBar = () => {
   const { books, setFilteredBooks } = useContext(AppContext);

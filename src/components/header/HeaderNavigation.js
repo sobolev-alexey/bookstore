@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../context/globalState';
+import { AppContext } from '../../context/globalState';
 
 const HeaderNavigation = () => {
   const { refs } = useContext(AppContext);

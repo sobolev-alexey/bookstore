@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import freeDelivery from '../assets/free-delivery-single-bg.png';
-import rocket from '../assets/rocket.svg';
-import logo from '../assets/logo.svg';
-import { Search, Cart, HeaderNavigation } from '.';
+import freeDelivery from '../../assets/header/free-delivery-single-bg.png';
+import rocket from '../../assets/header/rocket.svg';
+import logo from '../../assets/header/logo.svg';
+import { Search, Cart, HeaderNavigation } from '..';
 
 const Header = () => {
   return (
