@@ -4,8 +4,13 @@
   justify-content: center;
   align-items: center;
   max-width: 1200px;
+  width: 100%;
   align-self: center;
   background-color: $white;
+
+  .not-found {
+    margin: 100px auto;
+  }
 
   .banner-carousel-wrapper {
     max-width: 919px;
