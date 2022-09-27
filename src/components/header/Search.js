@@ -1,23 +1,24 @@
 import React, { useContext } from 'react';
 import { Form, Input } from 'antd';
-import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { AppContext } from '../../context/globalState';
 import { findBooks } from '../../utils/helpers';
+import callApi from '../../utils/callApi';
 
 const SearchBar = () => {
   const { books, setFilteredBooks } = useContext(AppContext);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const [searchForm] = Form.useForm();
 
   const onFinish = async values => {
     const result = findBooks(books, values?.query);
     setFilteredBooks(result);
-    try {
-      const backendResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/search?q=${values?.query}`);
-      backendResponse?.data && setFilteredBooks(backendResponse?.data);
-    } catch (error) {
-      console.error(error);
+    const backendResponse = await callApi('get', `search?q=${values?.query}`);
+    backendResponse && setFilteredBooks(backendResponse);
+    if (location.pathname !== '/') {
+      navigate('/');
     }
   }
 
