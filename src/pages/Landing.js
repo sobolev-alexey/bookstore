@@ -1,20 +1,20 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { Spin } from 'antd';
 import { AppContext } from '../context/globalState';
 import { Bookshelf, Layout, Banner } from '../components';
 
 const Landing = () => {
-  const { filteredBooks } = useContext(AppContext);
-  const [books, setBooks] = useState(filteredBooks);
-
-  useEffect(() => {
-    setBooks(filteredBooks);
-  }, [filteredBooks?.length]);
+  const { filteredBooks, books } = useContext(AppContext);
 
   return (
     <Layout>
       <div className="landing-wrapper">
         <Banner />
-        { books?.length ? <Bookshelf books={books} /> : null }
+        { filteredBooks?.length ? <Bookshelf books={filteredBooks} /> : 
+          (books?.length 
+            ? <h3 className="not-found">Nothing found</h3> 
+            : <Spin size="large" />)
+        }
       </div>
     </Layout>
   );
