@@ -1,6 +1,6 @@
 {
   "name": "bookstore",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Bookstore",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,9 +32,9 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.1",
+    "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
     "@babel/preset-react": "^7.18.6",
     "@types/react": "^18.0.21",
     "babel-eslint": "^10.1.0",
