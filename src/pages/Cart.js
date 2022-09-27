@@ -3,10 +3,10 @@ import { Image, Rate, Select } from 'antd';
 import { Link } from 'react-router-dom'; 
 import { AppContext } from '../context/globalState';
 import { Layout, BookCarousel, EmptyBasket } from '../components';
-import missingImage from '../assets/empty.png';
-import basketImage from '../assets/basket-shopping-solid-black.svg';
-import paypalImage from '../assets/paypal_button.jpg';
-import cardsImage from '../assets/cards.jpg';
+import missingImage from '../assets/common/empty.png';
+import basketImage from '../assets/cart/basket-shopping-solid-black.svg';
+import paypalImage from '../assets/cart/paypal_button.jpg';
+import cardsImage from '../assets/cart/cards.jpg';
 import { getPriceLabel } from '../utils/helpers';
 
 const Cart = () => {

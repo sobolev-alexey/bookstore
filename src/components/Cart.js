@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context/globalState';
-import cartIcon from '../assets/basket-shopping-solid.svg';
+import cartIcon from '../assets/header/basket-shopping-solid.svg';
 import { getPriceLabel } from '../utils/helpers';
 
 const Cart = () => {

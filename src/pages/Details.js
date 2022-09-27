@@ -4,9 +4,9 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../context/globalState';
 import { Layout, BookCarousel } from '../components';
-import missingImage from '../assets/empty.png';
-import rocketImage from '../assets/rocket_black.svg';
-import checkImage from '../assets/circle-check-regular.svg';
+import missingImage from '../assets/common/empty.png';
+import rocketImage from '../assets/details/rocket_black.svg';
+import checkImage from '../assets/details/circle-check-regular.svg';
 import { getPriceLabel } from '../utils/helpers';
 
 const Details = () => {

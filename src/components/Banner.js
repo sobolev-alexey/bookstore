@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'antd';
 import { AppContext } from '../context/globalState';
-import discountBanner from '../assets/discount.jpg';
+import discountBanner from '../assets/landing/discount.jpg';
 
 function Banner() {
   const { books } = useContext(AppContext);
