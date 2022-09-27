@@ -11,11 +11,18 @@ import cartIcon from '../assets/header/basket-shopping-solid.svg';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
-  const { basket } = useContext(AppContext);
+  const { basket, setBasket } = useContext(AppContext);
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [total, setTotal] = useState(0);
   const [orderDetails, setOrderDetails] = useState(null);
+  const [isStripeAvailable] = useState(!!process.env.REACT_APP_STRIPE_KEY);
+
+  useEffect(() => {
+    if (basket?.total === 0) {
+      navigate('/');
+    }
+  }, []);
 
   useEffect(() => {
     setTotal(
@@ -25,16 +32,13 @@ const Checkout = () => {
         basket.items?.[0]?.ListPrice?.currencyCode
       )
     );
-
-    if (basket?.total === 0) {
-      navigate('/');
-    }
   }, [basket?.total]);
 
   const processPayment = async (paymentDetails) => {
     const values = form.getFieldsValue();
     console.log(values, paymentDetails);
     setOrderDetails(paymentDetails);
+    setBasket({ items: [], total: 0, count: 0 });
   }
 
   return (
@@ -127,13 +131,22 @@ const Checkout = () => {
                 </div>
                 <div className="card payment-details-wrapper">
                   <h3>2. Payment</h3>
-                  <Elements stripe={stripePromise}>
-                    <CheckoutPaymentForm 
-                      amount={basket?.total} 
-                      currency={basket.items?.[0]?.ListPrice?.currencyCode} 
-                      callback={processPayment} 
-                    />
-                  </Elements>
+                  {
+                    isStripeAvailable ? (
+                      <Elements stripe={stripePromise}>
+                        <CheckoutPaymentForm 
+                          amount={basket?.total} 
+                          currency={basket.items?.[0]?.ListPrice?.currencyCode} 
+                          callback={processPayment} 
+                        />
+                      </Elements>
+                    ) : (
+                      <button 
+                        className="primary"
+                        onClick={() => processPayment({ orderId: 123456 })}
+                      >Buy now</button>
+                    )
+                  }
                   <p className="consent">
                     In placing your order, you are confirming that you have read and agree to our <u>Terms and Conditions</u>. Please also see our <u>Privacy Policy</u> and our <u>Cookies Policy</u>.
                   </p>
@@ -141,7 +154,6 @@ const Checkout = () => {
               </>
             )
           }
-
         </div>
         <div className="checkout-summary-column-wrapper">
           <div className="summary-details-wrapper">
