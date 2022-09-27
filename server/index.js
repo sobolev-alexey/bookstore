@@ -31,7 +31,8 @@ server.get('/api/books/:id', async (req, res) => {
     if (bookDataFromStorage) {
       const result = JSON.parse(bookDataFromStorage)
         ?.find(book => book?.ID === req.params?.id);
-      return res.send(result);
+      
+      return result ? res.send(result) : res.status(404).send({ status: 'error', error: 'Book not found' });
     }
   } catch (error) { 
     console.error(error);
