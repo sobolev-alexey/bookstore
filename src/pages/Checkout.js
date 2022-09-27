@@ -22,7 +22,8 @@ const Checkout = () => {
   }, [basket?.total]);
 
   const processPayment = async () => {
-
+    const values = form.getFieldsValue();
+    console.log(values)
   }
 
   return (
@@ -41,10 +42,11 @@ const Checkout = () => {
             form={form}
             validateTrigger='onChange'
             scrollToFirstError
+            autoComplete="off"
+            size="large"
+            className="address-form"
           >
             <Form.Item 
-              required 
-              // hasFeedback
               name="name"
               label="Full name"
               extra="First and last name. For example: John Smith"
@@ -54,8 +56,6 @@ const Checkout = () => {
             </Form.Item>
 
             <Form.Item 
-              required 
-              // hasFeedback
               name="address1"
               label="Address line 1"
               extra="For example: street address, PO box, company name, c/o"
@@ -73,8 +73,6 @@ const Checkout = () => {
             </Form.Item>
 
             <Form.Item 
-              required 
-              // hasFeedback
               name="city"
               label="Town/City"
               rules={[{ required: true, message: 'Please enter your Town/City' }]}
@@ -90,8 +88,6 @@ const Checkout = () => {
             </Form.Item>
 
             <Form.Item 
-              required 
-              // hasFeedback
               name="postcode"
               label="Postcode/ZIP"
               extra="If you don't have a postcode or ZIP, please write 'No Postcode'"
