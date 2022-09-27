@@ -1,7 +1,7 @@
 // https://www.stripe.com/docs/payments/integration-builder
 // https://codesandbox.io/s/react-stripe-js-card-detailed-omfb3?file=/src/App.js
 
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Input, Form } from 'antd';
 import { isEmpty } from 'lodash';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { SubmitButton, CardField, ErrorMessage } from "./StripeComponents";
 import callApi from '../../utils/callApi';
 
-const StripeCheckoutForm = () => {
+const StripeCheckoutForm = ({ amount, currency, callback }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -21,8 +21,6 @@ const StripeCheckoutForm = () => {
 
   const handleSubmit = async () => {
     try {
-      // event.preventDefault();
-
       if (!stripe || !elements) {
         // Stripe.js has not loaded yet. Make sure to disable
         // form submission until Stripe.js has loaded.
@@ -42,7 +40,7 @@ const StripeCheckoutForm = () => {
         setProcessing(true);
       }
 
-      const response = await callApi('put', 'payment', billingDetails);
+      const response = await callApi('post', 'payment', { ...billingDetails, amount, currency });
       const { clientSecret } = response;
 
       if (!clientSecret) {
@@ -63,22 +61,24 @@ const StripeCheckoutForm = () => {
           billing_details: billingDetails,
         }
       });
-      console.log('result', result)
 
       if (result?.error) {
         // Show error to your customer (e.g., insufficient funds)
-        console.log(result?.error?.message);
+        // console.log(result?.error?.message);
         setError(result?.error);
       } else {
+
         // The payment has been processed!
         if (result?.paymentIntent?.status === 'succeeded') {
           if (!response?.error && response?.status !== 'error') {
             setPayment(result?.paymentIntent);
+            callback({ ...billingDetails, orderId: result?.paymentIntent?.id });
           } else {
             setError(response?.error);
           }
         }
       }
+
       setProcessing(false);
     } catch (error) {
       console.error(error);
@@ -87,21 +87,7 @@ const StripeCheckoutForm = () => {
     }
   };
 
-  return payment ? (
-    <div className="stripe-result">
-      <div className="stripe-result-title" role="alert">
-        Thanks for purchasing!
-      </div>
-      <div className="stripe-result-message">
-        Your transaction ID is {payment?.id}
-      </div>
-      <Link to="/" className="stripe-result-cta">
-        <button className="primary large">
-          Continue shopping
-        </button>
-      </Link>
-    </div>
-  ) : (
+  return (
     <div className="stripe-form-wrapper">
       <Form
         form={stripeForm}
@@ -130,7 +116,7 @@ const StripeCheckoutForm = () => {
             },
           ]}
         >
-          <Input className="rounded-input"/>
+          <Input />
         </Form.Item>
         <Form.Item
           name="email"
@@ -150,7 +136,7 @@ const StripeCheckoutForm = () => {
             },
           ]}
         >
-          <Input className="rounded-input"/>
+          <Input />
         </Form.Item>
         <CardField
           onChange={(e) => {
@@ -168,9 +154,8 @@ const StripeCheckoutForm = () => {
           Buy now
         </SubmitButton>
       </Form>
-
     </div>
-  );
+  )
 };
 
 export default StripeCheckoutForm;
