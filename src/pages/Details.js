@@ -1,24 +1,29 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Image, Rate } from 'antd';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Image, Rate, Spin } from 'antd';
+import { useParams, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/globalState';
 import { Layout, BookCarousel } from '../components';
 import missingImage from '../assets/common/empty.png';
 import rocketImage from '../assets/details/rocket_black.svg';
 import checkImage from '../assets/details/circle-check-regular.svg';
 import { getPriceLabel } from '../utils/helpers';
+import callApi from '../utils/callApi';
 
 const Details = () => {
   const { bookId } = useParams();
+  const navigate = useNavigate();
   const { books, basket, setBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
   useEffect(() => {
     async function getBook() {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${bookId}`);
-      setBook(response?.data);
+      const backendResponse = await callApi('get', `books/${bookId}`);
+      if (backendResponse === 'Book not found') {
+        navigate('/');
+      } else {
+        setBook(backendResponse);
+      }
     }
 
     getBook();
