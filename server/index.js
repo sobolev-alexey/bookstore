@@ -12,6 +12,14 @@ const server = express();
 server.use(bodyParser.json());
 server.use(cors());
 
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: '2020-08-27',
+  appInfo: {
+    name: "bookstore",
+    version: "1.2.1",
+  }
+});
+
 // health check API
 server.get('/api/ping', (req, res) => res.send('pong'));
 
@@ -44,6 +52,20 @@ server.get('/api/search', async (req, res) => {
   try {
     const results = await findBooks(req?.query?.q);
     res.send(results);
+  } catch (error) { 
+    console.error(error);
+  }
+});
+
+server.post('/api/payment', async (req, res) => {
+  try {
+    const { amount, currency } = req.body;
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: Math.round(Number(amount) * 100),
+      currency,
+      metadata: {integration_check: 'accept_a_payment'},
+    });
+    res.json({ clientSecret: paymentIntent?.client_secret });
   } catch (error) { 
     console.error(error);
   }
