@@ -13,12 +13,19 @@ const Checkout = () => {
   const [form] = Form.useForm();
   const [total, setTotal] = useState(0);
   const [isFormValid, setFormValid] = useState(false);
-  const [orderDetails, setOrderDetails] = useState(null);
+  const [orderID, setOrderID] = useState('');
   const [isStripeAvailable] = useState(!!process.env.REACT_APP_STRIPE_KEY);
 
   useEffect(() => {
     if (basket?.total === 0) {
       navigate('/');
+    }
+
+    // Clear basket if order was placed
+    return () => {
+      if (orderID) {
+        updateBasket();
+      }
     }
   }, []);
 
@@ -37,10 +44,10 @@ const Checkout = () => {
       ...form.getFieldsValue(), 
       ...paymentDetails,
       amount: Number(basket?.total.toFixed(2)),
-      bookIds: basket?.items?.map(item => item.id).join(', ')
+      bookIds: basket?.items?.map(item => item.id).join(', '),
+      basket: JSON.stringify(basket.items)
     });
-    setOrderDetails(paymentDetails);
-    updateBasket();
+    setOrderID(paymentDetails.orderId);
   }
 
   const validate = () => {
@@ -58,20 +65,20 @@ const Checkout = () => {
         <div className="checkout-main-column-wrapper">
           <div className="steps-wrapper">
             <div className="step active">1. Payment details</div>
-            { !orderDetails && <div className="divider" /> }
-            <div className={`step ${orderDetails && 'active'}`}>2. Order placed</div>
+            { !orderID && <div className="divider" /> }
+            <div className={`step ${orderID && 'active'}`}>2. Order placed</div>
           </div>
           {
-            orderDetails ? (
+            orderID ? (
               <div className="card order-wrapper">
                 <div className="order-title" role="alert">
                   Thanks for purchasing!
                 </div>
                 <div className="order-message">
-                  Your Order ID is <b>{orderDetails?.orderId}</b>
+                  Your Order ID is <b>{orderID}</b>
                 </div>
                 <Link to="/" className="order-cta">
-                  <button className="primary large">
+                  <button className="primary large" onClick={() => updateBasket()}>
                     Continue shopping
                   </button>
                 </Link>
