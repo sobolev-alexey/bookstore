@@ -9,7 +9,7 @@ import Layout from './common/Layout';
 import Search from './header/Search';
 import Bookshelf from './landing/Bookshelf';
 import EmptyBasket from './cart/EmptyBasket';
-import CheckoutPaymentForm from './checkout/CheckoutPaymentForm';
+import PaymentForm from './checkout/PaymentForm';
 
 export { 
   BookCard,
@@ -23,5 +23,5 @@ export {
   Search,
   Bookshelf,
   EmptyBasket,
-  CheckoutPaymentForm,
+  PaymentForm,
 };

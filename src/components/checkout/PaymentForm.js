@@ -2,14 +2,16 @@
 // https://codesandbox.io/s/react-stripe-js-card-detailed-omfb3?file=/src/App.js
 
 import React, { useState } from "react";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements, CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Input, Form } from 'antd';
 import { isEmpty } from 'lodash';
-import { Link } from 'react-router-dom';
 import { SubmitButton, CardField, ErrorMessage } from "./StripeComponents";
 import callApi from '../../utils/callApi';
 
-const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+
+const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -158,4 +160,17 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
   )
 };
 
-export default StripeCheckoutForm;
+const PaymentForm = ({ basket, isFormValid, callback}) => {
+  return (
+    <Elements stripe={stripePromise}>
+      <StripeCheckoutForm 
+        amount={basket?.total} 
+        currency={basket.items?.[0]?.currency} 
+        callback={callback} 
+        isFormValid={isFormValid}
+      />
+    </Elements>
+  )
+}
+
+export default PaymentForm;
