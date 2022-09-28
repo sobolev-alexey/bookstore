@@ -31,7 +31,7 @@ const BookCarousel = ({ books }) => {
                 {
                   books
                     ?.slice(index * pageSize, (index + 1) * pageSize)
-                    ?.map(book => <BookCard book={book} key={book?.ID} />)
+                    ?.map(book => <BookCard book={book} key={book?.id} />)
                 }
               </div>
             </div>

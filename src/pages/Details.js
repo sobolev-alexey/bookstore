@@ -14,6 +14,7 @@ const Details = () => {
   const navigate = useNavigate();
   const { books, basket, updateBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
+  const [suggested, setSuggested] = useState([]);
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
   useEffect(() => {
@@ -23,6 +24,12 @@ const Details = () => {
         navigate('/');
       } else {
         setBook(backendResponse);
+
+        const suggested = books
+          ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+          ?.sort((a, b) => b?.averageRating - a?.averageRating)
+          ?.filter(item => item?.genre === backendResponse?.genre);
+        setSuggested(suggested);
       }
     }
 
@@ -32,10 +39,10 @@ const Details = () => {
 
   const addBook = book => {
     const myBasket = { ...basket };
-    myBasket.total += book?.ListPrice?.amount;
+    myBasket.total += book?.listPrice;
     myBasket.count += 1;
 
-    const similarBook = myBasket?.items?.find(item => book.ID === item.ID);
+    const similarBook = myBasket?.items?.find(item => book.id === item.id);
     if (similarBook) {
       similarBook.count += 1; 
     } else {
@@ -50,7 +57,7 @@ const Details = () => {
   return (
     <Layout>
       {
-        !book || !book?.ID 
+        !book || !book?.id 
           ? <Spin size="large" /> 
           : (
               <div className="details-page-wrapper">
@@ -59,31 +66,31 @@ const Details = () => {
                     <div className="book-details-image-wrapper">
                       <Image 
                         className="book-image"
-                        src={book?.Cover} 
-                        alt={book?.Title} 
+                        src={book?.cover} 
+                        alt={book?.title} 
                         width={260}
                         preview={false}
                         fallback={missingImage}
                       />
                     </div>
                     <div className="book-details-description-wrapper">
-                      <h2 className="title">{book?.Title}</h2>
+                      <h2 className="title">{book?.title}</h2>
                       <div className="rating">
-                        <Rate allowHalf disabled value={book?.AverageRating} defaultValue={book?.AverageRating} />&nbsp;&nbsp;
-                        ({book?.RatingsCount || 0})
+                        <Rate allowHalf disabled value={book?.averageRating} defaultValue={book?.averageRating} />&nbsp;&nbsp;
+                        ({book?.ratingsCount || 0})
                       </div>
                       <p className="author">By (author)
-                        {`  ${book?.Authors?.join(', ')}`}
+                        {`  ${book?.authors || book?.author}`}
                       </p>
                       <br />
-                      <p className="description">{book?.Description}</p>
+                      <p className="description">{book?.description}</p>
                     </div>
                   </div>
                   <div className="price-details-wrapper">
                     <h1 className="price">          
                       { 
-                        book?.ListPrice?.amount 
-                        ? getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) 
+                        book?.listPrice 
+                        ? getPriceLabel(book?.listPrice, book?.country, book?.currency) 
                         : <>Not available</>
                       }
                     </h1>
@@ -106,7 +113,7 @@ const Details = () => {
                     <button 
                       className="primary long"
                       onClick={() => addBook(book)}
-                      disabled={!book?.ListPrice?.amount}
+                      disabled={!book?.listPrice}
                     >
                       Add to basket
                     </button>
@@ -115,12 +122,12 @@ const Details = () => {
                 <div className="card additional-details-wrapper">
                   <h3>Product details</h3>
                   <div className="product-details-wrapper">
-                      <span><p className="bold">Format:</p><p>Paperback | {book?.PageCount} pages</p></span>
-                      <span><p className="bold">Publication date:</p><p>{book?.PublishedDate}</p></span>
-                      <span><p className="bold">Publisher:</p><p>{book?.Publisher}</p></span>
-                      <span><p className="bold">Language:</p><p>{book?.Country}</p></span>
-                      <span><p className="bold">ISBN13:</p><p>{book?.ISBN}</p></span>
-                      <span><p className="bold">Category:</p><p>{book?.Categories?.join(', ')}</p></span>
+                      <span><p className="bold">Format:</p><p>Paperback | {book?.pageCount} pages</p></span>
+                      <span><p className="bold">Publication date:</p><p>{book?.publishedDate}</p></span>
+                      <span><p className="bold">Publisher:</p><p>{book?.publisher}</p></span>
+                      <span><p className="bold">Language:</p><p>{book?.country}</p></span>
+                      <span><p className="bold">ISBN13:</p><p>{book?.isbn}</p></span>
+                      <span><p className="bold">Category:</p><p>{book?.categories || book?.genre}</p></span>
                   </div>
                 </div>
                 <div className="card suggestions-wrapper book-carousel-wrapper">
@@ -128,8 +135,8 @@ const Details = () => {
                   <BookCarousel books={books?.slice(randomBookIndex, randomBookIndex + 14)} />
                 </div>
                 <div className="card suggestions-wrapper book-carousel-wrapper">
-                  <h3>Bestsellers in {book?.Categories?.[0]}</h3>
-                  <BookCarousel books={books?.filter(item => item?.Genre === book?.Genre)} />
+                  <h3>Bestsellers in {book?.categories}</h3>
+                  <BookCarousel books={suggested} />
                 </div>
               </div>
             )

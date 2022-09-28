@@ -15,7 +15,7 @@ const SearchBar = () => {
   const onFinish = async values => {
     const result = findBooks(books, values?.query);
     setFilteredBooks(result);
-    const backendResponse = await callApi('get', `search?q=${values?.query}`);
+    const backendResponse = await callApi('get', `search/${values?.query}`);
     backendResponse && setFilteredBooks(backendResponse);
     if (location.pathname !== '/') {
       navigate('/');

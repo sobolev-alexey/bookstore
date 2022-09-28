@@ -17,21 +17,21 @@ const Cart = () => {
   useEffect(() => {
     setPriceLabel(getPriceLabel(
       basket?.total, 
-      basket.items?.[0]?.Country, 
-      basket.items?.[0]?.ListPrice?.currencyCode
+      basket.items?.[0]?.country, 
+      basket.items?.[0]?.currency
     ))
     setRandomBookIndex(Math.floor(Math.random() * books?.length - 20));
   }, [basket?.total]);
 
   const removeBook = book => {
     const myBasket = { ...basket };
-    const index = myBasket?.items.findIndex(item => item.ID === book.ID);
+    const index = myBasket?.items.findIndex(item => item.id === book.id);
     const item = myBasket?.items?.[index];
     
     if (index >= 0 && item) {
       myBasket?.items.splice(index, 1);
       // Re-calculate total
-      const total = myBasket?.items?.reduce((total, item) => total + item.count * item.ListPrice?.amount, 0);
+      const total = myBasket?.items?.reduce((total, item) => total + item.count * item.listPrice, 0);
       const count = myBasket?.items?.reduce((total, item) => total + item.count, 0);
       myBasket.total = total;
       myBasket.count = count;
@@ -42,7 +42,7 @@ const Cart = () => {
 
   const changeQty = (book, qty) => {
     const myBasket = { ...basket };
-    const index = myBasket?.items.findIndex(item => item.ID === book.ID);
+    const index = myBasket?.items.findIndex(item => item.id === book.id);
     const item = myBasket?.items?.[index];
     
     if (index >= 0 && item) {
@@ -50,7 +50,7 @@ const Cart = () => {
     }
 
     // Re-calculate total
-    const total = myBasket?.items?.reduce((total, item) => total + item.count * item.ListPrice?.amount, 0);
+    const total = myBasket?.items?.reduce((total, item) => total + item.count * item.listPrice, 0);
     const count = myBasket?.items?.reduce((total, item) => total + item.count, 0);
     myBasket.total = total;
     myBasket.count = count;
@@ -90,13 +90,13 @@ const Cart = () => {
                 <h3>Shopping basket details</h3>
                 {
                   basket.items?.map(book => (
-                    <div className="book-details-wrapper" key={book.ID}>
+                    <div className="book-details-wrapper" key={book.id}>
                       <div className="book-details-image-wrapper">
-                        <Link to={`/book/${book.ID}`}>
+                        <Link to={`/book/${book.id}`}>
                           <Image 
                             className="book-image"
-                            src={book?.Cover} 
-                            alt={book?.Title} 
+                            src={book?.cover} 
+                            alt={book?.title} 
                             width={130}
                             preview={false}
                             fallback={missingImage}
@@ -104,19 +104,19 @@ const Cart = () => {
                         </Link>
                       </div>
                       <div className="book-details-description-wrapper">
-                        <Link to={`/book/${book.ID}`}>
-                          <h2 className="title">{book?.Title}</h2>
+                        <Link to={`/book/${book.id}`}>
+                          <h2 className="title">{book?.title}</h2>
                         </Link>
                         <div className="rating">
-                          <Rate allowHalf disabled value={book?.AverageRating} defaultValue={book?.AverageRating} />&nbsp;&nbsp;
-                          ({book?.RatingsCount || 0})
+                          <Rate allowHalf disabled value={book?.averageRating} defaultValue={book?.averageRating} />&nbsp;&nbsp;
+                          ({book?.ratingsCount || 0})
                         </div>
                         <p className="author">
-                          Paperback, English &nbsp;&nbsp;|&nbsp;&nbsp; {`${book?.Authors?.join(', ') || book?.Author}`}
+                          Paperback, English &nbsp;&nbsp;|&nbsp;&nbsp; {`${book?.authors || book?.author}`}
                         </p>
                         <br />
                         <p className="price">
-                          { getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) }
+                          { getPriceLabel(book?.listPrice, book?.country, book?.currency) }
                         </p>
                       </div>
                       <div className="price-qty-details-wrapper">
@@ -137,7 +137,7 @@ const Cart = () => {
                           </Select>
                         </div>
                         <p className="price">
-                          { getPriceLabel(book?.ListPrice?.amount * book.count, book?.Country, book?.ListPrice?.currencyCode) }
+                          { getPriceLabel(book?.listPrice * book.count, book?.country, book?.currency) }
                         </p>
                         <button className="remove" onClick={() => removeBook(book)}>remove</button>
                       </div>

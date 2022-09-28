@@ -1,14 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Form, Input } from 'antd';
-import {loadStripe} from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
 import { Link, useNavigate } from 'react-router-dom';
-import { Layout, CheckoutPaymentForm } from '../components';
+import { Layout, PaymentForm } from '../components';
 import { getPriceLabel } from '../utils/helpers';
 import { AppContext } from '../context/globalState';
 import cartIcon from '../assets/header/basket-shopping-solid.svg';
-
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -29,8 +25,8 @@ const Checkout = () => {
     setTotal(
       getPriceLabel(
         basket?.total, 
-        basket.items?.[0]?.Country, 
-        basket.items?.[0]?.ListPrice?.currencyCode
+        basket.items?.[0]?.country, 
+        basket.items?.[0]?.currency
       )
     );
   }, [basket?.total]);
@@ -142,14 +138,11 @@ const Checkout = () => {
                   <h3>2. Payment</h3>
                   {
                     isStripeAvailable ? (
-                      <Elements stripe={stripePromise}>
-                        <CheckoutPaymentForm 
-                          amount={basket?.total} 
-                          currency={basket.items?.[0]?.ListPrice?.currencyCode} 
-                          callback={processPayment} 
-                          isFormValid={isFormValid}
-                        />
-                      </Elements>
+                      <PaymentForm 
+                        basket={basket}
+                        callback={processPayment} 
+                        isFormValid={isFormValid}
+                      />
                     ) : (
                       <button 
                         className="primary"
@@ -178,13 +171,13 @@ const Checkout = () => {
             <div className="summary-body">
               {
                 basket.items?.map(book => (
-                  <div className="summary-item" key={book?.ID}>
+                  <div className="summary-item" key={book?.id}>
                     <div className="title">
-                      <p>{book?.Title} (Paperback)</p>
+                      <p>{book?.title} (Paperback)</p>
                       <p>x{book?.count}</p>
                     </div>
                     <p className="price">
-                      { getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) }
+                      { getPriceLabel(book?.listPrice, book?.country, book?.currency) }
                     </p>
                   </div>
                 ))
