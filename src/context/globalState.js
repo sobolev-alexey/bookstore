@@ -19,6 +19,19 @@ const GlobalState = ({ children }) => {
     setBooks(data);
     setFilteredBooks(data);
     setLoading(false);
+
+    if (basket.total === 0) {
+      // Try to retrieve basket content from storage
+      const basketStored = await localStorage.getItem('basket');
+      if (basketStored) {
+        setBasket(JSON.parse(basketStored));
+      }
+    }
+  }
+
+  const updateBasket = async (newBasket = { items: [], total: 0, count: 0 }) => {
+    setBasket(newBasket);
+    await localStorage.setItem('basket', JSON.stringify(newBasket));
   }
 
   return (
@@ -28,7 +41,7 @@ const GlobalState = ({ children }) => {
       books, 
       filteredBooks,
       setFilteredBooks,
-      setBasket,
+      updateBasket,
       basket,
       setRefs,
     }}>
