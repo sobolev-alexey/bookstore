@@ -17,7 +17,6 @@ const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback })
   const [error, setError] = useState(null);
   const [cardComplete, setCardComplete] = useState(false);
   const [processing, setProcessing] = useState(false);
-  const [payment, setPayment] = useState(null);
   const [billingDetails, setBillingDetails] = useState({});
   const [stripeForm] = Form.useForm();
 
@@ -42,7 +41,7 @@ const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback })
         setProcessing(true);
       }
 
-      const response = await callApi('post', 'payment', { ...billingDetails, amount, currency });
+      const response = await callApi('post', 'payment', { amount, currency });
       const { clientSecret } = response;
 
       if (!clientSecret) {
@@ -60,7 +59,10 @@ const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback })
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
-          billing_details: billingDetails,
+          billing_details: { 
+            name: billingDetails?.cardholder, 
+            email: billingDetails?.email 
+          },
         }
       });
 
@@ -73,7 +75,6 @@ const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback })
         // The payment has been processed!
         if (result?.paymentIntent?.status === 'succeeded') {
           if (!response?.error && response?.status !== 'error') {
-            setPayment(result?.paymentIntent);
             callback({ ...billingDetails, orderId: result?.paymentIntent?.id });
           } else {
             setError(response?.error);
@@ -100,16 +101,16 @@ const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback })
         onFinish={handleSubmit}
       >
         <Form.Item
-          label="Full Name" 
-          name="name"
+          label="Cardholder Name" 
+          name="cardholder"
           autoComplete="off" 
           onChange={(e) => {
-            setBillingDetails({ ...billingDetails, name: e.target.value });
+            setBillingDetails({ ...billingDetails, cardholder: e.target.value });
           }}
           rules={[
             {
               required: true,
-              message: "Please provide your name!",
+              message: "Please provide cardholder name!",
             },
             {
               min: 2,
