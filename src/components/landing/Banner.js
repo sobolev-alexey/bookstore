@@ -21,16 +21,16 @@ function Banner() {
         </div>
         {
           books
-            ?.sort((a,b) => a?.AverageRating - b?.AverageRating)
+            ?.sort((a,b) => a?.averageRating - b?.averageRating)
             ?.slice(0, 3)
             ?.map(book => (
-              <div key={book?.Title}>
-                <div className="banner-book-cover carousel-item" key={book?.Title}>
-                  <img src={book?.Cover} alt={book?.Title} className="banner-book-cover" />
+              <div key={book?.title}>
+                <div className="banner-book-cover carousel-item" key={book?.title}>
+                  <img src={book?.cover} alt={book?.title} className="banner-book-cover" />
                   <div className="book-details">
-                    <h3>{book?.Title}</h3>
-                    <p>by {book?.Author}</p>
-                    <button className="primary" onClick={() => navigate(`/book/${book.ID}`)}>Details</button>
+                    <h3>{book?.title}</h3>
+                    <p>by {book?.author}</p>
+                    <button className="primary" onClick={() => navigate(`/book/${book.id}`)}>Details</button>
                   </div>
                 </div>
               </div>

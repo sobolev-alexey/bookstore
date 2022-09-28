@@ -12,8 +12,8 @@ const Cart = () => {
     setTotal(
       getPriceLabel(
         basket?.total, 
-        basket.items?.[0]?.Country, 
-        basket.items?.[0]?.ListPrice?.currencyCode
+        basket.items?.[0]?.country, 
+        basket.items?.[0]?.currency
       )
     );
   }, [basket?.total]);

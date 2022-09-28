@@ -27,16 +27,19 @@ function Bookshelf({ books }) {
     const science = [];
     const philosophy = [];
 
-    books?.forEach(book => {
-      if (book?.Genre === 'fiction') {
+    books
+    ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+    ?.sort((a, b) => b?.averageRating - a?.averageRating)
+    ?.forEach(book => {
+      if (book?.genre === 'fiction') {
         fiction.push(book);
-      } else if (book?.Genre === 'nonfiction') {
+      } else if (book?.genre === 'nonfiction') {
         nonfiction.push(book);
-      } else if (book?.Genre === 'tech') {
+      } else if (book?.genre === 'tech') {
         tech.push(book);
-      } else if (book?.Genre === 'science') {
+      } else if (book?.genre === 'science') {
         science.push(book);
-      } else if (book?.Genre === 'philosophy') {
+      } else if (book?.genre === 'philosophy') {
         philosophy.push(book);
       } 
     });
@@ -57,8 +60,8 @@ function Bookshelf({ books }) {
         <h2>Bestselling Books</h2>
         <BookCarousel
           books={books
-            ?.filter(book => book?.RatingsCount > 0)
-            ?.sort((a, b) => b?.RatingsCount - a?.RatingsCount)
+            ?.filter(book => book?.ratingsCount > 0)
+            ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
           } 
         />
       </div>
@@ -69,9 +72,9 @@ function Bookshelf({ books }) {
         <h2>Top rated</h2>
         <BookCarousel
           books={books
-            ?.filter(book => book?.AverageRating > 0 && book?.RatingsCount > 0)
-            ?.sort((a, b) => b?.RatingsCount - a?.RatingsCount)
-            ?.sort((a, b) => b?.AverageRating - a?.AverageRating)
+            ?.filter(book => book?.averageRating > 0 && book?.ratingsCount > 0)
+            ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+            ?.sort((a, b) => b?.averageRating - a?.averageRating)
           } 
         />
       </div>
@@ -81,7 +84,7 @@ function Bookshelf({ books }) {
       >
         <h2>New releases and in the news</h2>
         <BookCarousel
-          books={books?.sort((a, b) => a?.RatingsCount - b?.RatingsCount)} 
+          books={books?.sort((a, b) => a?.ratingsCount - b?.ratingsCount)} 
         />
       </div>
       <div 

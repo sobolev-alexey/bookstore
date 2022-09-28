@@ -10,10 +10,10 @@ function BookCard({ book }) {
 
   const addBook = book => {
     const myBasket = { ...basket };
-    myBasket.total += book?.ListPrice?.amount;
+    myBasket.total += book?.listPrice;
     myBasket.count += 1;
 
-    const similarBook = myBasket?.items?.find(item => book.ID === item.ID);
+    const similarBook = myBasket?.items?.find(item => book.id === item.id);
     if (similarBook) {
       similarBook.count += 1; 
     } else {
@@ -27,14 +27,14 @@ function BookCard({ book }) {
 
   return (
     <div
-      key={`${book?.ID}-${book?.ISBN}`}
+      key={`${book?.id}-${book?.isbn}`}
       className="book-item-wrapper"
     >
-        <Link to={`/book/${book?.ID}`}>
+        <Link to={`/book/${book?.id}`}>
           <Image 
             className="thumbnail"
-            src={book?.Cover || missingThumbnail} 
-            alt={book?.Title} 
+            src={book?.cover || missingThumbnail} 
+            alt={book?.title} 
             width={90}
             height={140}
             preview={false}
@@ -43,25 +43,25 @@ function BookCard({ book }) {
           />
         </Link>
         <div className="item-info">
-          <Link to={`/book/${book?.ID}`}>
+          <Link to={`/book/${book?.id}`}>
             <h4 className="title">
-              {book?.Title}
+              {book?.title}
             </h4>
           </Link>
-          <Link to={`/book/${book?.ID}`}>
+          <Link to={`/book/${book?.id}`}>
             <p className="author">
-              {book?.Author || <>&nbsp;</>}
+              {book?.author || <>&nbsp;</>}
             </p>
           </Link>
         </div>
         <div className="rating">
-          <Rate allowHalf disabled value={book?.AverageRating || 0} defaultValue={book?.AverageRating || 0} />&nbsp;&nbsp;
-          ({book?.RatingsCount || 0})
+          <Rate allowHalf disabled value={book?.averageRating || 0} defaultValue={book?.averageRating || 0} />&nbsp;&nbsp;
+          ({book?.ratingsCount || 0})
         </div>
         <div className="price">
           { 
-            book?.ListPrice?.amount 
-            ? getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) 
+            book?.listPrice 
+            ? getPriceLabel(book?.listPrice, book?.country, book?.currency) 
             : <p>Not available</p>
           }
         </div>
@@ -69,7 +69,7 @@ function BookCard({ book }) {
           <button 
             className="primary" 
             onClick={() => addBook(book)}
-            disabled={!book?.ListPrice?.amount}
+            disabled={!book?.listPrice}
           >
             Add to basket
           </button>

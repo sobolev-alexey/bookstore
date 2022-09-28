@@ -1,14 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Form, Input } from 'antd';
-import {loadStripe} from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
 import { Link, useNavigate } from 'react-router-dom';
-import { Layout, CheckoutPaymentForm } from '../components';
+import { Layout, PaymentForm } from '../components';
 import { getPriceLabel } from '../utils/helpers';
+import callApi from '../utils/callApi';
 import { AppContext } from '../context/globalState';
 import cartIcon from '../assets/header/basket-shopping-solid.svg';
-
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -16,12 +13,19 @@ const Checkout = () => {
   const [form] = Form.useForm();
   const [total, setTotal] = useState(0);
   const [isFormValid, setFormValid] = useState(false);
-  const [orderDetails, setOrderDetails] = useState(null);
+  const [orderID, setOrderID] = useState('');
   const [isStripeAvailable] = useState(!!process.env.REACT_APP_STRIPE_KEY);
 
   useEffect(() => {
     if (basket?.total === 0) {
       navigate('/');
+    }
+
+    // Clear basket if order was placed
+    return () => {
+      if (orderID) {
+        updateBasket();
+      }
     }
   }, []);
 
@@ -29,15 +33,21 @@ const Checkout = () => {
     setTotal(
       getPriceLabel(
         basket?.total, 
-        basket.items?.[0]?.Country, 
-        basket.items?.[0]?.ListPrice?.currencyCode
+        basket.items?.[0]?.country, 
+        basket.items?.[0]?.currency
       )
     );
   }, [basket?.total]);
 
   const processPayment = async (paymentDetails) => {
-    setOrderDetails(paymentDetails);
-    updateBasket();
+    await callApi('post', 'order', { 
+      ...form.getFieldsValue(), 
+      ...paymentDetails,
+      amount: Number(basket?.total.toFixed(2)),
+      bookIds: basket?.items?.map(item => item.id).join(', '),
+      basket: JSON.stringify(basket.items)
+    });
+    setOrderID(paymentDetails.orderId);
   }
 
   const validate = () => {
@@ -55,20 +65,20 @@ const Checkout = () => {
         <div className="checkout-main-column-wrapper">
           <div className="steps-wrapper">
             <div className="step active">1. Payment details</div>
-            { !orderDetails && <div className="divider" /> }
-            <div className={`step ${orderDetails && 'active'}`}>2. Order placed</div>
+            { !orderID && <div className="divider" /> }
+            <div className={`step ${orderID && 'active'}`}>2. Order placed</div>
           </div>
           {
-            orderDetails ? (
+            orderID ? (
               <div className="card order-wrapper">
                 <div className="order-title" role="alert">
                   Thanks for purchasing!
                 </div>
                 <div className="order-message">
-                  Your Order ID is <b>{orderDetails?.orderId}</b>
+                  Your Order ID is <b>{orderID}</b>
                 </div>
                 <Link to="/" className="order-cta">
-                  <button className="primary large">
+                  <button className="primary large" onClick={() => updateBasket()}>
                     Continue shopping
                   </button>
                 </Link>
@@ -142,14 +152,11 @@ const Checkout = () => {
                   <h3>2. Payment</h3>
                   {
                     isStripeAvailable ? (
-                      <Elements stripe={stripePromise}>
-                        <CheckoutPaymentForm 
-                          amount={basket?.total} 
-                          currency={basket.items?.[0]?.ListPrice?.currencyCode} 
-                          callback={processPayment} 
-                          isFormValid={isFormValid}
-                        />
-                      </Elements>
+                      <PaymentForm 
+                        basket={basket}
+                        callback={processPayment} 
+                        isFormValid={isFormValid}
+                      />
                     ) : (
                       <button 
                         className="primary"
@@ -178,13 +185,13 @@ const Checkout = () => {
             <div className="summary-body">
               {
                 basket.items?.map(book => (
-                  <div className="summary-item" key={book?.ID}>
+                  <div className="summary-item" key={book?.id}>
                     <div className="title">
-                      <p>{book?.Title} (Paperback)</p>
+                      <p>{book?.title} (Paperback)</p>
                       <p>x{book?.count}</p>
                     </div>
                     <p className="price">
-                      { getPriceLabel(book?.ListPrice?.amount, book?.Country, book?.ListPrice?.currencyCode) }
+                      { getPriceLabel(book?.listPrice, book?.country, book?.currency) }
                     </p>
                   </div>
                 ))

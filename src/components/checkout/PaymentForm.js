@@ -2,20 +2,21 @@
 // https://codesandbox.io/s/react-stripe-js-card-detailed-omfb3?file=/src/App.js
 
 import React, { useState } from "react";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements, CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { Input, Form } from 'antd';
 import { isEmpty } from 'lodash';
-import { Link } from 'react-router-dom';
 import { SubmitButton, CardField, ErrorMessage } from "./StripeComponents";
 import callApi from '../../utils/callApi';
 
-const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+
+const StripeCheckoutForm = ({ amount, currency = 'eur', isFormValid, callback }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
   const [cardComplete, setCardComplete] = useState(false);
   const [processing, setProcessing] = useState(false);
-  const [payment, setPayment] = useState(null);
   const [billingDetails, setBillingDetails] = useState({});
   const [stripeForm] = Form.useForm();
 
@@ -40,7 +41,7 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
         setProcessing(true);
       }
 
-      const response = await callApi('post', 'payment', { ...billingDetails, amount, currency });
+      const response = await callApi('post', 'payment', { amount, currency });
       const { clientSecret } = response;
 
       if (!clientSecret) {
@@ -58,7 +59,10 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
-          billing_details: billingDetails,
+          billing_details: { 
+            name: billingDetails?.cardholder, 
+            email: billingDetails?.email 
+          },
         }
       });
 
@@ -71,7 +75,6 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
         // The payment has been processed!
         if (result?.paymentIntent?.status === 'succeeded') {
           if (!response?.error && response?.status !== 'error') {
-            setPayment(result?.paymentIntent);
             callback({ ...billingDetails, orderId: result?.paymentIntent?.id });
           } else {
             setError(response?.error);
@@ -98,16 +101,16 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
         onFinish={handleSubmit}
       >
         <Form.Item
-          label="Full Name" 
-          name="name"
+          label="Cardholder Name" 
+          name="cardholder"
           autoComplete="off" 
           onChange={(e) => {
-            setBillingDetails({ ...billingDetails, name: e.target.value });
+            setBillingDetails({ ...billingDetails, cardholder: e.target.value });
           }}
           rules={[
             {
               required: true,
-              message: "Please provide your name!",
+              message: "Please provide cardholder name!",
             },
             {
               min: 2,
@@ -158,4 +161,17 @@ const StripeCheckoutForm = ({ amount, currency, isFormValid, callback }) => {
   )
 };
 
-export default StripeCheckoutForm;
+const PaymentForm = ({ basket, isFormValid, callback}) => {
+  return (
+    <Elements stripe={stripePromise}>
+      <StripeCheckoutForm 
+        amount={basket?.total} 
+        currency={basket.items?.[0]?.currency} 
+        callback={callback} 
+        isFormValid={isFormValid}
+      />
+    </Elements>
+  )
+}
+
+export default PaymentForm;

@@ -1,0 +1,17 @@
+# compiled output
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# Keep environment variables out of version control
+.env
+/prisma/dev.db
+/prisma/migrations/*_init
