@@ -43,24 +43,18 @@ model Book {
   isbn            String?
   country         String?
   publishedDate   String?
-  orders          Order[]
 }
 
 model Order {
-  id              String @default(cuid()) @id
-  books           Book[] @relation(references: [id])
-  email           String
-  address         Address?
-}
-
-model Address {
-  id              Int @id @default(autoincrement())
+  orderId         String @id @unique
   name            String
   address1        String
   address2        String?
   city            String
   state           String?
   postcode        String
-  orderId         String @unique
-  order           Order @relation(fields: [orderId], references: [id])
+  email           String
+  cardholder      String
+  bookIds         String
+  amount          Float
 }
