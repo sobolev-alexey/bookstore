@@ -9,5 +9,6 @@ export class CreateOrderDto {
   email: string;
   cardholder: string;
   bookIds: string
+  basket: string;
   amount: number;
 }

@@ -56,5 +56,6 @@ model Order {
   email           String
   cardholder      String
   bookIds         String
+  basket          String
   amount          Float
 }
