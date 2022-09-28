@@ -3,6 +3,7 @@ import { Form, Input } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { Layout, PaymentForm } from '../components';
 import { getPriceLabel } from '../utils/helpers';
+import callApi from '../utils/callApi';
 import { AppContext } from '../context/globalState';
 import cartIcon from '../assets/header/basket-shopping-solid.svg';
 
@@ -32,6 +33,12 @@ const Checkout = () => {
   }, [basket?.total]);
 
   const processPayment = async (paymentDetails) => {
+    await callApi('post', 'order', { 
+      ...form.getFieldsValue(), 
+      ...paymentDetails,
+      amount: Number(basket?.total.toFixed(2)),
+      bookIds: basket?.items?.map(item => item.id).join(', ')
+    });
     setOrderDetails(paymentDetails);
     updateBasket();
   }
