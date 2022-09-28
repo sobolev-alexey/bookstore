@@ -20,7 +20,7 @@ export class BooksController {
 
   @Get('api/books')
   getAll() {
-    return this.booksService.getAlBooks();
+    return this.booksService.getAllBooks();
   }
 
   @Get('api/search/:q')
