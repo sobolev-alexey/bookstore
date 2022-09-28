@@ -1,4 +1,4 @@
-export class CreatePaymentDto {
+export class PaymentDto {
   currency: string;
   amount: number;
 }

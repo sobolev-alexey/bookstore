@@ -1,4 +1,4 @@
-export class CreateOrderDto {
+export class OrderDto {
   name: string;
   address1: string;
   address2?: string;
