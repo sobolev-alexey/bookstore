@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../core/prisma.service';
 import { Book, BookMini } from '@prisma/client';
+import { PrismaService } from '../core/prisma.service';
 
 type BookPromise = Promise<Book | null>;
 type BooksPromise = Promise<Book[] | []>;
@@ -21,7 +21,7 @@ export class BooksService {
     return book;
   }
 
-  async getAlBooks(): BookMiniPromise {
+  async getAllBooks(): BookMiniPromise {
     return await this.prismaClient.bookMini.findMany({});
   }
 

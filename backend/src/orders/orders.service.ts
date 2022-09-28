@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { CreateOrderDto } from './dto/create-order.dto';
-import { CreatePaymentDto } from './dto/create-payment.dto';
+import { OrderDto } from './dto/order.dto';
+import { PaymentDto } from './dto/payment.dto';
 import { PrismaService } from '../core/prisma.service';
 import { Order } from '@prisma/client';
 
 type OrderPromise = Promise<Order | null>;
+type OrdersPromise = Promise<Order[] | []>;
 type PaymentPromise = Promise<{ clientSecret: string | null }>;
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
@@ -19,9 +20,9 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
 export class OrdersService {
   constructor(private prismaClient: PrismaService) {}
 
-  async createPaymentIntent(createPaymentDto: CreatePaymentDto): PaymentPromise {
+  async createPaymentIntent(paymentDto: PaymentDto): PaymentPromise {
     try {
-      const { amount, currency } = createPaymentDto;
+      const { amount, currency } = paymentDto;
       const paymentIntent = await stripe.paymentIntents.create({
         amount: Math.round(Number(amount) * 100),
         currency,
@@ -34,9 +35,13 @@ export class OrdersService {
     }
   }
 
-  async createOrder(createOrderDto: CreateOrderDto): OrderPromise {
+  async createOrder(orderDto: OrderDto): OrderPromise {
     return this.prismaClient.order.create({
-      data: createOrderDto,
+      data: orderDto,
     });
+  }
+
+  async getAllOrders(): OrdersPromise {
+    return await this.prismaClient.order.findMany({});
   }
 }
