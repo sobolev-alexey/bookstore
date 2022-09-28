@@ -6,7 +6,7 @@ import missingThumbnail from "../../assets/common/missingThumbnail.png";
 import { getPriceLabel } from '../../utils/helpers';
 
 function BookCard({ book }) {
-  const { basket, setBasket } = useContext(AppContext);
+  const { basket, updateBasket } = useContext(AppContext);
 
   const addBook = book => {
     const myBasket = { ...basket };
@@ -22,7 +22,7 @@ function BookCard({ book }) {
         count: 1
       });
     }
-    setBasket(myBasket);
+    updateBasket(myBasket);
   }
 
   return (
