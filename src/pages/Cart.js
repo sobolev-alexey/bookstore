@@ -10,7 +10,7 @@ import cardsImage from '../assets/cart/cards.jpg';
 import { getPriceLabel } from '../utils/helpers';
 
 const Cart = () => {
-  const { books, basket, setBasket } = useContext(AppContext);
+  const { books, basket, updateBasket } = useContext(AppContext);
   const [randomBookIndex, setRandomBookIndex] = useState(0);
   const [priceLabel, setPriceLabel] = useState();
 
@@ -37,7 +37,7 @@ const Cart = () => {
       myBasket.count = count;
     }
 
-    setBasket(myBasket);
+    updateBasket(myBasket);
   }
 
   const changeQty = (book, qty) => {
@@ -55,7 +55,7 @@ const Cart = () => {
     myBasket.total = total;
     myBasket.count = count;
 
-    setBasket(myBasket);
+    updateBasket(myBasket);
   }
 
   return (

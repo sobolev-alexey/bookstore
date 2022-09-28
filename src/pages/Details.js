@@ -12,7 +12,7 @@ import callApi from '../utils/callApi';
 const Details = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
-  const { books, basket, setBasket } = useContext(AppContext);
+  const { books, basket, updateBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
@@ -44,7 +44,7 @@ const Details = () => {
         count: 1
       });
     }
-    setBasket(myBasket);
+    updateBasket(myBasket);
   }
 
   return (

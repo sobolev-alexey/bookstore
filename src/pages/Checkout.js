@@ -12,7 +12,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = () => {
   const navigate = useNavigate();
-  const { basket, setBasket } = useContext(AppContext);
+  const { basket, updateBasket } = useContext(AppContext);
   const [form] = Form.useForm();
   const [total, setTotal] = useState(0);
   const [isFormValid, setFormValid] = useState(false);
@@ -37,7 +37,7 @@ const Checkout = () => {
 
   const processPayment = async (paymentDetails) => {
     setOrderDetails(paymentDetails);
-    setBasket({ items: [], total: 0, count: 0 });
+    updateBasket();
   }
 
   const validate = () => {
