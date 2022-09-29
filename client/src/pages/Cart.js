@@ -20,8 +20,8 @@ const Cart = () => {
       basket.items?.[0]?.country, 
       basket.items?.[0]?.currency
     ))
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
-  }, [basket?.total]);
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
+  }, [basket?.total]); // eslint-disable-line
 
   const removeBook = book => {
     const myBasket = { ...basket };

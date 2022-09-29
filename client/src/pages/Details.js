@@ -27,8 +27,8 @@ const Details = () => {
     }
 
     getBook();
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
-  }, [bookId]);
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
+  }, [bookId]); // eslint-disable-line
 
   const addBook = book => {
     const myBasket = { ...basket };
@@ -130,7 +130,7 @@ const Details = () => {
                       ?.filter(item => item?.listPrice)
                       ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
                       ?.sort((a, b) => b?.averageRating - a?.averageRating)
-                      ?.slice(randomBookIndex, randomBookIndex + 14)
+                      ?.slice(randomBookIndex, randomBookIndex + 35)
                     } 
                   />
                 </div>

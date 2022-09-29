@@ -1,7 +1,7 @@
 {
   "name": "bookstore",
-  "version": "0.0.1",
-  "description": "Bookstore backend application using nestjs, expressjs, prisma orm and sqlite.",
+  "version": "1.4.0",
+  "description": "Bookstore backend application using NestJS, Prisma ORM and SQLite",
   "private": true,
   "scripts": {
     "prebuild": "rimraf dist",
@@ -38,6 +38,7 @@
     "@nestjs/platform-express": "^9.1.2",
     "@nestjs/swagger": "^6.1.2",
     "@prisma/client": "^4.4.0",
+    "axios": "^0.27.2",
     "csvtojson": "^2.0.10",
     "nanoid": "^4.0.0",
     "randomstring": "^1.2.2",
