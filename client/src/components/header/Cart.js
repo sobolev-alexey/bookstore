@@ -16,7 +16,7 @@ const Cart = () => {
         basket.items?.[0]?.currency
       )
     );
-  }, [basket?.total]);
+  }, [basket?.total]); // eslint-disable-line
 
   return (
     <div className="cart-wrapper">

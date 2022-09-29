@@ -28,7 +28,7 @@ const Checkout = () => {
         updateBasket();
       }
     }
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     setTotal(
@@ -38,7 +38,7 @@ const Checkout = () => {
         basket.items?.[0]?.currency
       )
     );
-  }, [basket?.total]);
+  }, [basket?.total]); // eslint-disable-line
 
   const processPayment = async (paymentDetails) => {
     await callApi('post', 'order', { 

@@ -14,11 +14,11 @@ function Bookshelf({ books }) {
 
   useEffect(() => {
     setRefs(refs);
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     sortByGenre(books);
-  }, [books.length]);
+  }, [books.length]); // eslint-disable-line
 
   function sortByGenre(books) {
     const fiction = [];
