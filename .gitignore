@@ -21,7 +21,5 @@ node_modules/
 .env
 .env.test
 
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-# parcel distributables
-dist/
+# distributables
+build/
