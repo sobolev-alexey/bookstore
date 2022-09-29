@@ -1,6 +1,6 @@
 describe('empty spec', () => {
   it('performs search', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.header-wrapper .header-search-wrapper #search-form_query')
       .should('be.visible');
@@ -9,10 +9,10 @@ describe('empty spec', () => {
       .type('rowling');
     cy.get('button.search').click();
 
-    cy.get('.book-carousel-wrapper.bestselling .ant-carousel .books-page')
+    cy.get('.book-carousel-wrapper.fiction .ant-carousel .books-page')
       .should('be.visible');
 
-    cy.get('.book-carousel-wrapper.bestselling .ant-carousel .books-page')
+    cy.get('.book-carousel-wrapper.fiction .ant-carousel .books-page')
       .children().should('have.length', 2);
 
     cy.get('.book-carousel-wrapper.nonfiction .ant-carousel .slick-track')

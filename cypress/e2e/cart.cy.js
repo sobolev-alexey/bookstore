@@ -1,6 +1,6 @@
 describe('empty spec', () => {
   it('show empty cart page', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.header-bottom-wrapper a.cart-link')
       .click();
@@ -18,11 +18,11 @@ describe('empty spec', () => {
     cy.get('.cart-page-wrapper .continue-shopping a')
       .click();
 
-    cy.url().should('eq', 'http://localhost:1234/');
+    cy.url().should('eq', Cypress.config().baseUrl);
   })
 
   it('show cart page', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.book-carousel-wrapper.bestselling').should('be.visible');
 

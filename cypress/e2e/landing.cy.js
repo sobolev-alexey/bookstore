@@ -1,6 +1,6 @@
 describe('empty spec', () => {
   it('shows header', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.header-wrapper')
       .should('be.visible');
@@ -14,14 +14,14 @@ describe('empty spec', () => {
   })
 
   it('shows banner', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.banner-carousel-wrapper')
       .should('be.visible');
   })
 
   it('shows bookshelf', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.book-carousel-wrapper.bestselling').should('be.visible');
     cy.get('.book-carousel-wrapper.topRated').should('be.visible');
@@ -36,7 +36,7 @@ describe('empty spec', () => {
       .children().should('have.length', 14);
 
     cy.get('.book-carousel-wrapper.topRated .ant-carousel .slick-track')
-      .children().should('have.length', 35);
+      .children().should('have.length', 15);
 
     cy.get('.book-carousel-wrapper.newReleases .ant-carousel .books-page')
       .children().should('have.length', 14);

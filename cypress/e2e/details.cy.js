@@ -1,6 +1,6 @@
 describe('empty spec', () => {
   it('show details page', () => {
-    cy.visit('http://localhost:1234')
+    cy.visit('/')
 
     cy.get('.book-carousel-wrapper.bestselling').should('be.visible');
 
@@ -9,7 +9,7 @@ describe('empty spec', () => {
       .should('have.text', 'The Pillars of the Earth')
       .click();
     
-    cy.url().should('contain', 'http://localhost:1234/book/');
+    cy.url().should('contain', 'book/');
 
     cy.get('.book-details-wrapper .ant-image-img.book-image')
       .should('be.visible');
@@ -38,7 +38,7 @@ describe('empty spec', () => {
     cy.get('.details-page-wrapper .book-carousel-wrapper.bestselling').should('be.visible');
 
     cy.get('.details-page-wrapper .book-carousel-wrapper.bestselling .ant-carousel .slick-list .slick-track')
-      .children().should('have.length', 23);
+      .children().should('have.length', 9);
 
     cy.get('.details-page-wrapper .book-carousel-wrapper.similar .ant-carousel .slick-list .slick-track')
       .children().should('have.length', 5);
