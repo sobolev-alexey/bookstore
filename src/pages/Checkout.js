@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Form, Input } from 'antd';
+import { nanoid } from 'nanoid';
 import { Link, useNavigate } from 'react-router-dom';
 import { Layout, PaymentForm } from '../components';
 import { getPriceLabel } from '../utils/helpers';
@@ -160,7 +161,7 @@ const Checkout = () => {
                     ) : (
                       <button 
                         className="primary"
-                        onClick={() => processPayment({ orderId: 123456 })}
+                        onClick={() => processPayment({ orderId: nanoid() })}
                         disabled={!isFormValid}
                       >Buy now</button>
                     )
