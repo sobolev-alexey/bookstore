@@ -86,10 +86,10 @@ describe('empty spec', () => {
       .and('contain', '38,10');
 
     cy.get('.cart-page-wrapper .book-carousel-wrapper').should('be.visible');
-    cy.get('.cart-page-wrapper .book-carousel-wrapper .ant-carousel .slick-list .slick-track')
-      .children().should('have.length', 5);
-    cy.get('.cart-page-wrapper .book-carousel-wrapper .ant-carousel .books-page')
-      .children().should('have.length', 14);
+    // cy.get('.cart-page-wrapper .book-carousel-wrapper .ant-carousel .slick-list .slick-track')
+    //   .children().should('have.length', 5);
+    // cy.get('.cart-page-wrapper .book-carousel-wrapper .ant-carousel .books-page')
+    //   .children().should('have.length', 14);
 
 
     // Test dynamic functionality
