@@ -11,47 +11,48 @@ and [sqlite](https://www.sqlite.org).
 1. Install all dependencies and create an `.env` file using the development template file.  
 The `.env` file is not stored in the git repo to avoid keys disclosure.
 ```bash
-$ npm install
-$ cp .env.develop .env
+npm install
+cp .env.develop .env
 ```
 2. Create a database and fill/seed it with initial book data. 
 Initial book data is taken from `./books.json` file, which is an extended version of the initial `books.csv` containing attributes like description and book cover.
 ```bash
-$ npm run seed
+npm run seed
 ```
+To view/manage the local SQLite database it is recommended to use software like [DB Browser for SQLite](https://sqlitebrowser.org/)
+
+<br />  
+<hr>
 
 ## Running the app
 #### Development
 ```bash
-$ npm run start
+npm run start
 ```
 
 #### Watch mode
 ```bash
-$ npm run start:dev
+npm run start:dev
 ```
 
 #### Production mode - firewall restrictions for port 80 must be disabled
 ```bash
-$ npm run start:prod
+npm run start:prod
 ```
 
 ## Test
 
 #### Unit tests
 ```bash
-$ npm run test
+npm run test
 ```
-<img src="../screenshots/backend_tests.jpg" width="450">
+<img src="../documentation/screenshots/server/backend_tests.jpg" width="450">
 
 #### Check test coverage
 ```bash
-$ npm run test:cov
+npm run test:cov
 ```
-<img src="../screenshots/coverage.jpg" width="700">
-
-File [test/books rest api calls.postman_collection.json](test/books rest api calls.postman_collection.json) contains several api calls that can be imported and manually
-processed using [postman](https://www.postman.com).
+<img src="../documentation/screenshots/server/coverage.jpg" width="700">
 
 ## API Documentation
 
@@ -62,7 +63,7 @@ https://docs.nestjs.com/openapi/introduction) documentation.
 While the application is running, open your browser and navigate to http://localhost:3000/api  
 You should see the Swagger UI.  
 To generate and download a Swagger JSON file, navigate to http://localhost:3000/api-json
-<img src="../screenshots/swagger.jpg" width="700">
+<img src="../documentation/screenshots/server/swagger.jpg" width="700">
 
 ### API Endpoints
 The api endpoints described in the following are fully available.
@@ -131,29 +132,29 @@ Additionally all needed dependencies will be installed.
 There is no need to install NestJS to do this because `npx` will download the `NestJS cli` before it is executed.
 Choose the package manager according to your needs. In the following `npm` was used.
 ```bash
-$ npx @nestjs/cli new <app-name>
-$ cd <app-name>
+npx @nestjs/cli new <app-name>
+cd <app-name>
 ```
 
 #### Create resources for BOOKS and ORDERS
 Generate the API resource for the books. Choose transport layer 'REST API' and CRUD generation.
 ```bash
-$ npx nest generate resource books
+npx nest generate resource books
 ```
 
 #### Database binding
 This project uses SQLite and Prisma as described in the [NestJS Prisma recipe](
 https://docs.nestjs.com/recipes/prisma).
 ```bash
-$ npm install prisma --save-dev
+npm install prisma --save-dev
 ```
 Add peer dependencies<br/>
 ```bash
-$ npm install class-validator class-transformer --save-dev
+npm install class-validator class-transformer --save-dev
 ```
 Create an initial prisma folder and files
 ```bash
-$ npx prisma init
+npx prisma init
 ```
 Now edit the file `prisma/schema.prisma` to look similar to the following
 
@@ -182,14 +183,14 @@ And set the DATABASE_URL variable in the `.env` file in the project root:
 
 Generate the initial sql migration files and apply them to our SQLite db.
 ```bash
-$ npx prisma migrate dev --name init
+npx prisma migrate dev --name init
 ```
 or by executing a script
 ```bash
-$ npm run seed
+npm run seed
 ```
 
-<img src="../screenshots/db_seed.jpg" width="700">
+<img src="../documentation/screenshots/server/db_seed.jpg" width="700">
 
 The model specific CRUD database interface is generated.
 On future model changes it is required to call `npx prisma generate` manually to obtain an updated database interface.
@@ -204,5 +205,5 @@ The prisma seed command calls the script in the file `prisma/seed.ts` which load
 script is also called every time the database is reset using `npx migrate reset`. More details are described in the
 [Prisma seed database documentation](https://www.prisma.io/docs/guides/database/seed-database).
   
-  
-  
+<br/>  
+<br/>  
