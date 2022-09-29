@@ -4,7 +4,7 @@
 
 An example api application using [NestJS](https://nestjs.com),
 [Prisma ORM](https://www.prisma.io),
-and [sqlite](https://www.sqlite.org).
+and [SQLite](https://www.sqlite.org).
 
 ## Installation
 

@@ -4,9 +4,6 @@
 
 # Book shop e-commerce site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
 ## Technologies
 * [React](https://reactjs.org/)
 * [Ant Design System](https://ant.design/components/overview/)
@@ -17,24 +14,61 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <hr>
 
+## Screenshots
+
+See application screenshots [here](../documentation/screenshots/client/README.md)
+
 ## Key Features
-search
 
-scroll to
+#### Real book data
+Book data is fetched from [`Google Books API`](https://developers.google.com/books/docs/v1/using). The result contains extended information about each book from the original CSV file, including book cover image, list of authors, description, rating and number of reviews, publisher information, and current list price.  
+This data is fetched once on the backend and stored in a JSON file `books.json`, which is now used to populate book results.
 
-banner
+#### Search
+Fully functional dual search functionality. First (more performant) search is run over cached items and the result is shown instantly. In addition a search request is sent to the backend API for advanced search including fields like description, ISBN, publisher, category to name a few. Once the search response is available, it will be shown to the customer by updating the seach results 
 
-carousel
+#### Navigation
+Header category navigation with additional scroll-to-category functionality
 
-random recommendations
+#### Marketing banner
+Marketing banner embedded into a carousel is shown on the promiment position of the landing page. 
+It can contain promotional information and featured books. 
+The carousel automatically rotates every 10 seconds giving just enough time to check the content
 
-stripe checkout, real stripe data fetching
+#### Book carousel
+Book carousel displays paginated results for every category, such as bestsellers, top rated books, fiction/non-fiction and other categories.  
+It contains buttons on both sides to rotate the carousel content
 
-simple checkout
+#### Random recommendations
+On the Book details page and cart page multiple carousel elements display book recommendations. 
+First carousel contains books from the same category, while second carousel contains randomly picked books in order to promote them to the customer
 
-cart change qty
+#### Stripe checkout, real stripe data fetching
+Stripe payment processing can be optionally added to enhance checkout experience. It must be connected to a test account with Stripe to not charge real credit cards. In addition, card validation is minimized for test accounts, so card numbers like `4242 4242 4242 4242` can be used.  
+Stripe checkout is split in three steps:
+1. User enters payment details using fancy UI 
+2. Payment details are sent to server backend in order to generate so-called payment intent, which should return a payment key valid for this specific purchase. 
+3. Client issues payment confirmation request to Stripe including billing details entered by the customer. Once the payment is verified and accepted, Stripe responds with unique payment ID, which can be also used as order ID.
 
-backend order storage, export
+Stripe publisheable key should be added to `.env` in order to activate payments with Stripe
+
+#### Simple checkout
+If no Stripe account is available, checkout will simply validate address fields and then activate a `Buy now` button, which will generate fake order object along with random order ID.  
+No payment details are requested, as it would add additional security concerns otherwise
+
+
+#### Shopping basket dynamic functionality
+* Basket functionality is fully dynatic, items can be removed, item quantity can be changed and new items can be added from the carousel wrapper or details page at any time.  
+* Mini cart view in the header is automatically updated once items are added or removed.  
+* Basket is stored in browser's storage to survive window refreshes and browser terminations.  
+* Basket is automatically clearer after checkout if customer presses the `Continue shopping` button
+
+#### Backend order processing
+All orders are sent to the server backend and stored in the local SQLite database.  
+This is a ground work for further order processing and fulfillment 
+
+#### Framework
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 <hr>
 
