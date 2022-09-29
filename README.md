@@ -29,11 +29,10 @@ Home page
 ## Setup & Run
 
 ### Prerequisites:
-Client & Server
+Client & server
 - NodeJS version: 16 (not supported: 17)
 - Web browser: Chrome, Mozilla Firefox
 - [Optional] Stripe keypair (publishable and secret keys) for payment processing
-<br/>
 
 <hr>
 
@@ -43,7 +42,7 @@ Client & Server
 To install the dependencies for both `/client` & `/server` folders followed by database initialization run the following command from the root folder: <br>
 
 ```bash
-npm run install-all`
+npm run install-all
 ```
 
 ### Run
@@ -55,5 +54,13 @@ npm run install-all`
 #### Client
 
 /client -> `npm start`
+
+<br />  
+
+### Documentation
+
+#### [Webserver documentation](./server/README.md)
+
+#### [Client documentation](./client/README.md)
 
 <br />  
