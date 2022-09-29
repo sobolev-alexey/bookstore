@@ -42,11 +42,13 @@ $ npm run start:prod
 ```bash
 $ npm run test
 ```
+<img src="../screenshots/backend_tests.jpg" width="450">
 
 #### Check test coverage
 ```bash
 $ npm run test:cov
 ```
+<img src="../screenshots/coverage.jpg" width="700">
 
 File [test/books rest api calls.postman_collection.json](test/books rest api calls.postman_collection.json) contains several api calls that can be imported and manually
 processed using [postman](https://www.postman.com).
@@ -60,6 +62,7 @@ https://docs.nestjs.com/openapi/introduction) documentation.
 While the application is running, open your browser and navigate to http://localhost:3000/api  
 You should see the Swagger UI.  
 To generate and download a Swagger JSON file, navigate to http://localhost:3000/api-json
+<img src="../screenshots/swagger.jpg" width="700">
 
 ### API Endpoints
 The api endpoints described in the following are fully available.
@@ -185,6 +188,8 @@ or by executing a script
 ```bash
 $ npm run seed
 ```
+
+<img src="../screenshots/db_seed.jpg" width="700">
 
 The model specific CRUD database interface is generated.
 On future model changes it is required to call `npx prisma generate` manually to obtain an updated database interface.
