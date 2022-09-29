@@ -1,21 +1,15 @@
 # Book shop e-commerce site
 
-The frontend uses:
-* [React](https://reactjs.org/)
-* [Ant Design System](https://ant.design/components/overview/)
-* [Create React App boilerplate](https://create-react-app.dev/)
-* [Sass CSS preprocessor](https://sass-lang.com/)
-* [Cypress e2e testing framework](https://www.cypress.io/)
-* [Stripe payment processing](https://stripe.com/)
+The design of the page was taken from the https://www.bookdepository.com/.
 
-The backend is headless and uses:
-* [Node.js](https://nodejs.org/en/)
-* [NestJS framework](https://nestjs.com/)
+### Documentation
 
+* ### [Client documentation](./client/README.md)
+* ### [Server documentation](./server/README.md)
 
-### Disclaimer
-
-The design of the page was taken from the https://www.bookdepository.com/. This project was created for demonstrational purposes only. I do **NOT** intend to produce any commercial content from this!
+<br />  
+<hr>
+<br />  
 
 ### Insights
 
@@ -25,6 +19,29 @@ Home page
 
 [More screenshots](./documentation/screenshots/client/README.md)
 
+<br />  
+<hr>
+<br />  
+
+### Technologies
+
+#### Frontend
+* [React](https://reactjs.org/)
+* [Ant Design System](https://ant.design/components/overview/)
+* [Create React App boilerplate](https://create-react-app.dev/)
+* [Sass CSS preprocessor](https://sass-lang.com/)
+* [Cypress e2e testing framework](https://www.cypress.io/)
+* [Stripe payment processing](https://stripe.com/)
+
+#### Frontend
+* [Node.js](https://nodejs.org/en/)
+* [NestJS framework](https://nestjs.com/)
+* [Prisma ORM](https://www.prisma.io)
+* [SQLite](https://www.sqlite.org)
+
+<br />  
+<hr>
+<br />  
 
 ## Setup & Run
 
@@ -34,7 +51,9 @@ Client & server
 - Web browser: Chrome, Mozilla Firefox
 - [Optional] Stripe keypair (publishable and secret keys) for payment processing
 
+<br />  
 <hr>
+<br />  
 
 ### Installation
 
@@ -49,7 +68,7 @@ npm run install-all
 
 Open up two terminals and run `npm start` in both terminals
 
-#### Webserver
+#### Server
 
 /server -> `npm start`
 
@@ -58,11 +77,11 @@ Open up two terminals and run `npm start` in both terminals
 /client -> `npm start`
 
 <br />  
+<hr>
+<br />  
 
-### Documentation
+### Disclaimer
 
-#### [Webserver documentation](./server/README.md)
-
-#### [Client documentation](./client/README.md)
+The design of the page was taken from the https://www.bookdepository.com/. This project was created for demonstrational purposes only. I do **NOT** intend to produce any commercial content from this!
 
 <br />  
