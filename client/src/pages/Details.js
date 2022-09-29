@@ -130,7 +130,7 @@ const Details = () => {
                       ?.filter(item => item?.listPrice)
                       ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
                       ?.sort((a, b) => b?.averageRating - a?.averageRating)
-                      ?.slice(randomBookIndex, randomBookIndex + 14)
+                      ?.slice(randomBookIndex, randomBookIndex + 35)
                     } 
                   />
                 </div>
