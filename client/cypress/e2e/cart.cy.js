@@ -94,7 +94,7 @@ describe('empty spec', () => {
 
     // Test dynamic functionality
     cy.get('.cart-page-wrapper .book-carousel-wrapper .ant-carousel .books-page .book-item-wrapper .actions .primary')
-      .eq(3).click();
+      .eq(1).click();
 
     cy.get('.cart-main-details-wrapper .book-details-wrapper')
       .should('be.visible')

@@ -4,8 +4,8 @@
 
 <img src="./landing.png">
 <br />  
-<br />  
 <hr>
+<br />  
 
 ### Book details page
 

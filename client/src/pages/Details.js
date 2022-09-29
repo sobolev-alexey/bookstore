@@ -27,7 +27,7 @@ const Details = () => {
     }
 
     getBook();
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
   }, [bookId]); // eslint-disable-line
 
   const addBook = book => {

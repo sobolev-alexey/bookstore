@@ -85,7 +85,7 @@ The api uses the books `ID` (e.g. `1xdECe1`) to address the stored book entries.
 **POST /api/payment**<br/>
 * Receives a payment object used to create payment intent with Stripe.
 * Requires a valid **Stripe Secret Key** to be present in the `.env` file.
-* In case the request is successful, a status 200 with client secred body is responded
+* In case the request is successful, a status 200 with client secret body is responded
 
 **POST /api/order**<br/>
 * Receives an order object and adds it to the database.
@@ -94,6 +94,10 @@ The api uses the books `ID` (e.g. `1xdECe1`) to address the stored book entries.
 * Returns `pong` to indicate that backend API is up and running
 
 
+## Payment processing with Stripe
+
+* To enable Stripe payment processing, you need to obtain a test keypair (publishable and secret keys) from [Stripe](https://stripe.com/)
+* In the `.env` file update the `STRIPE_SECRET_KEY` property with the secret key (starts with `sk_test_`)
 
 ## Limitations and ToDos
 

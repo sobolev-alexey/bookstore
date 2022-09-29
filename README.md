@@ -13,9 +13,9 @@ The backend is headless and uses:
 * [NestJS framework](https://nestjs.com/)
 
 
-### Disclaimer!
+### Disclaimer
 
-The design of the page was taken from the https://www.bookdepository.com/. This project was created for only demonstrational purposes. I do **NOT** intend to produce any commercial content from this!
+The design of the page was taken from the https://www.bookdepository.com/. This project was created for demonstrational purposes only. I do **NOT** intend to produce any commercial content from this!
 
 ### Insights
 
@@ -46,6 +46,8 @@ npm run install-all
 ```
 
 ### Run
+
+Open up two terminals and run `npm start` in both terminals
 
 #### Webserver
 

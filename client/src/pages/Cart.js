@@ -20,7 +20,7 @@ const Cart = () => {
       basket.items?.[0]?.country, 
       basket.items?.[0]?.currency
     ))
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
   }, [basket?.total]); // eslint-disable-line
 
   const removeBook = book => {
@@ -176,7 +176,7 @@ const Cart = () => {
                     ?.filter(item => item?.listPrice)
                     ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
                     ?.sort((a, b) => b?.averageRating - a?.averageRating)
-                    ?.slice(randomBookIndex, randomBookIndex + 35)
+                    ?.slice(randomBookIndex, randomBookIndex + 14)
                   } 
                 />
               </div>
