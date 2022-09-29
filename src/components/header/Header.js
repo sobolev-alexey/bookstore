@@ -12,7 +12,7 @@ const Header = () => {
         <div className="header-content centered">
           <img src={freeDelivery} alt="Free delivery worldwide" className="free-delivery-banner"/>
           <div className="free-delivery">
-            <img src={rocket} alt="" className="icon-rocket"/>&nbsp;
+            <img src={rocket} alt="" className="icon-rocket"/>
             <p>Free delivery worldwide</p>
           </div>
         </div>

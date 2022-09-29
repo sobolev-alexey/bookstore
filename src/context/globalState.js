@@ -11,7 +11,8 @@ const GlobalState = ({ children }) => {
   const [refs, setRefs] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    getBooks();
+    fetchBasket();
   }, []); // eslint-disable-line
 
   const fetchData = async () => {
@@ -19,7 +20,11 @@ const GlobalState = ({ children }) => {
     setBooks(data);
     setFilteredBooks(data);
     setLoading(false);
+    await localStorage.setItem('books', JSON.stringify(data));
+    return data;
+  }
 
+  const fetchBasket = async () => {
     if (basket.total === 0) {
       // Try to retrieve basket content from storage
       const basketStored = await localStorage.getItem('basket');
@@ -27,6 +32,26 @@ const GlobalState = ({ children }) => {
         setBasket(JSON.parse(basketStored));
       }
     }
+  }
+
+  const getBooks = async () => {
+    return new Promise(async resolve => {
+      if (books.length) {
+        resolve(books);
+      } else {
+        // Try to retrieve books content from storage
+        const booksStored = await localStorage.getItem('books');
+        if (booksStored) {
+          const booksData = JSON.parse(booksStored);
+          setBooks(booksData);
+          setFilteredBooks(booksData);
+          resolve(booksData);
+        } else {
+          const booksData = await fetchData();
+          resolve(booksData);
+        }
+      }
+    });
   }
 
   const updateBasket = async (newBasket = { items: [], total: 0, count: 0 }) => {

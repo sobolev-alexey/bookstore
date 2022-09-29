@@ -14,7 +14,6 @@ const Details = () => {
   const navigate = useNavigate();
   const { books, basket, updateBasket } = useContext(AppContext);
   const [book, setBook] = useState({});
-  const [suggested, setSuggested] = useState([]);
   const [randomBookIndex, setRandomBookIndex] = useState(0);
 
   useEffect(() => {
@@ -24,17 +23,11 @@ const Details = () => {
         navigate('/');
       } else {
         setBook(backendResponse);
-
-        const suggested = books
-          ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
-          ?.sort((a, b) => b?.averageRating - a?.averageRating)
-          ?.filter(item => item?.genre === backendResponse?.genre);
-        setSuggested(suggested);
       }
     }
 
     getBook();
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 20));
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
   }, [bookId]);
 
   const addBook = book => {
@@ -130,13 +123,27 @@ const Details = () => {
                       <span><p className="bold">Category:</p><p>{book?.categories || book?.genre}</p></span>
                   </div>
                 </div>
-                <div className="card suggestions-wrapper book-carousel-wrapper">
+                <div className="card suggestions-wrapper book-carousel-wrapper similar">
                   <h3>People who bought this also bought</h3>
-                  <BookCarousel books={books?.slice(randomBookIndex, randomBookIndex + 14)} />
+                  <BookCarousel 
+                    books={books
+                      ?.filter(item => item?.listPrice)
+                      ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+                      ?.sort((a, b) => b?.averageRating - a?.averageRating)
+                      ?.slice(randomBookIndex, randomBookIndex + 14)
+                    } 
+                  />
                 </div>
-                <div className="card suggestions-wrapper book-carousel-wrapper">
+                <div className="card suggestions-wrapper book-carousel-wrapper bestselling">
                   <h3>Bestsellers in {book?.categories}</h3>
-                  <BookCarousel books={suggested} />
+                  <BookCarousel 
+                    books={books
+                      ?.filter(item => item?.listPrice)
+                      ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+                      ?.sort((a, b) => b?.averageRating - a?.averageRating)
+                      ?.filter(item => item?.genre === book?.genre)
+                    } 
+                  />
                 </div>
               </div>
             )

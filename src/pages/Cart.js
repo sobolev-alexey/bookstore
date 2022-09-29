@@ -20,7 +20,7 @@ const Cart = () => {
       basket.items?.[0]?.country, 
       basket.items?.[0]?.currency
     ))
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 20));
+    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100));
   }, [basket?.total]);
 
   const removeBook = book => {
@@ -171,7 +171,14 @@ const Cart = () => {
 
               <div className="card suggestions-wrapper book-carousel-wrapper">
                 <h3>Often bought with your items</h3>
-                <BookCarousel books={books?.slice(randomBookIndex, randomBookIndex + 14)} />
+                <BookCarousel 
+                  books={books
+                    ?.filter(item => item?.listPrice)
+                    ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+                    ?.sort((a, b) => b?.averageRating - a?.averageRating)
+                    ?.slice(randomBookIndex, randomBookIndex + 14)
+                  } 
+                />
               </div>
             </>
           )
