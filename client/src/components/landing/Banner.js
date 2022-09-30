@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'antd';
 import { AppContext } from '../../context/globalState';
 import discountBanner from '../../assets/landing/discount.jpg';
+import promoBanner from '../../assets/landing/promo.jpg';
 
 function Banner() {
   const { books } = useContext(AppContext);
@@ -18,6 +19,9 @@ function Banner() {
       >
         <div>
           <img src={discountBanner} alt="10% Discount" className="carousel-item discount-banner"/>
+        </div>
+        <div>
+          <img src={promoBanner} alt="Promo Book" className="carousel-item discount-banner"/>
         </div>
         {
           books

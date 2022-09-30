@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { Form, Input } from 'antd';
-import { nanoid } from 'nanoid';
-import { Link, useNavigate } from 'react-router-dom';
-import { Layout, PaymentForm } from '../components';
+import { useContext, useState, useEffect } from 'react';
+import { Form } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { 
+  Layout, CheckoutPayment, CheckoutSummary, CheckoutAddress, CheckoutComplete 
+} from '../components';
 import { getPriceLabel } from '../utils/helpers';
 import callApi from '../utils/callApi';
 import { AppContext } from '../context/globalState';
-import cartIcon from '../assets/header/basket-shopping-solid.svg';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ const Checkout = () => {
   const [total, setTotal] = useState(0);
   const [isFormValid, setFormValid] = useState(false);
   const [orderID, setOrderID] = useState('');
-  const [isStripeAvailable] = useState(!!process.env.REACT_APP_STRIPE_KEY);
 
   useEffect(() => {
     if (basket?.total === 0) {
@@ -28,7 +27,7 @@ const Checkout = () => {
         updateBasket();
       }
     }
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     setTotal(
@@ -38,7 +37,7 @@ const Checkout = () => {
         basket.items?.[0]?.currency
       )
     );
-  }, [basket?.total]);
+  }, [basket?.total]); // eslint-disable-line
 
   const processPayment = async (paymentDetails) => {
     await callApi('post', 'order', { 
@@ -71,19 +70,7 @@ const Checkout = () => {
           </div>
           {
             orderID ? (
-              <div className="card order-wrapper">
-                <div className="order-title" role="alert">
-                  Thanks for purchasing!
-                </div>
-                <div className="order-message">
-                  Your Order ID is <b>{orderID}</b>
-                </div>
-                <Link to="/" className="order-cta">
-                  <button className="primary large" onClick={() => updateBasket()}>
-                    Continue shopping
-                  </button>
-                </Link>
-              </div>
+              <CheckoutComplete orderID={orderID} updateBasket={updateBasket} />
             ) : (
               <>
                 <div className="card address-details-wrapper">
@@ -98,126 +85,19 @@ const Checkout = () => {
                     className="address-form"
                     onValuesChange={validate}
                   >
-                    <Form.Item 
-                      name="name"
-                      label="Full name"
-                      extra="First and last name. For example: John Smith"
-                      rules={[{ required: true, message: 'Please enter your Full name' }]}
-                    >
-                      <Input />
-                    </Form.Item>
-
-                    <Form.Item 
-                      name="address1"
-                      label="Address line 1"
-                      extra="For example: street address, PO box, company name, c/o"
-                      rules={[{ required: true, message: 'Please enter your Address line 1' }]}
-                    >
-                      <Input />
-                    </Form.Item>
-
-                    <Form.Item 
-                      name="address2"
-                      label="Address line 2"
-                      extra="For example: apartment, suite, unit, building, floor"
-                    >
-                      <Input />
-                    </Form.Item>
-
-                    <Form.Item 
-                      name="city"
-                      label="Town/City"
-                      rules={[{ required: true, message: 'Please enter your Town/City' }]}
-                    >
-                      <Input />
-                    </Form.Item>
-
-                    <Form.Item 
-                      name="state"
-                      label="County/State"
-                    >
-                      <Input />
-                    </Form.Item>
-
-                    <Form.Item 
-                      name="postcode"
-                      label="Postcode/ZIP"
-                      extra="If you don't have a postcode or ZIP, please write 'No Postcode'"
-                      rules={[{ required: true, message: "Please enter your postcode/ZIP or write 'No Postcode'" }]}
-                    >
-                      <Input />
-                    </Form.Item>
+                    <CheckoutAddress />
                   </Form>
                 </div>
-                <div className="card payment-details-wrapper">
-                  <h3>2. Payment</h3>
-                  {
-                    isStripeAvailable ? (
-                      <PaymentForm 
-                        basket={basket}
-                        callback={processPayment} 
-                        isFormValid={isFormValid}
-                      />
-                    ) : (
-                      <button 
-                        className="primary"
-                        onClick={() => processPayment({ orderId: nanoid() })}
-                        disabled={!isFormValid}
-                      >Buy now</button>
-                    )
-                  }
-                  <p className="consent">
-                    In placing your order, you are confirming that you have read and agree to our <u>Terms and Conditions</u>. Please also see our <u>Privacy Policy</u> and our <u>Cookies Policy</u>.
-                  </p>
-                </div>
+                <CheckoutPayment 
+                  basket={basket} 
+                  isFormValid={isFormValid} 
+                  processPayment={processPayment} 
+                />
               </>
             )
           }
         </div>
-        <div className="checkout-summary-column-wrapper">
-          <div className="summary-details-wrapper">
-            <div className="summary-header">
-              <h3>Order summary</h3>
-              <div className="mini-total-wrapper">
-                <span className="cart-total"><img src={cartIcon} alt="cart" className="cart-icon" /> {basket?.count} items</span>
-                <span className="total">{total}</span>
-              </div>
-            </div>
-            <div className="summary-body">
-              {
-                basket.items?.map(book => (
-                  <div className="summary-item" key={book?.id}>
-                    <div className="title">
-                      <p>{book?.title} (Paperback)</p>
-                      <p>x{book?.count}</p>
-                    </div>
-                    <p className="price">
-                      { getPriceLabel(book?.listPrice, book?.country, book?.currency) }
-                    </p>
-                  </div>
-                ))
-              }
-              <div className="summary-item">
-                <div className="title">
-                  <p className="bold">Sub-total (incl. taxes)</p>
-                </div>
-                <p className="price">{ total }</p>
-              </div>
-              <div className="summary-item">
-                <div className="title">
-                  <p className="bold">Delivery</p>
-                </div>
-                <p className="price bold">FREE</p>
-              </div>
-              <div className="summary-item">
-                <div className="title">
-                  <p className="bold">Total</p>
-                </div>
-                <p className="price bold highlight">{ total }</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CheckoutSummary basket={basket} total={total} />
       </div>
     </Layout>
   );

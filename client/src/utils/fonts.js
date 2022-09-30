@@ -1,6 +1,6 @@
 import WebFontLoader from 'webfontloader';
 
-export default () => 
+const loadFonts = () => 
     WebFontLoader.load({
         google: {
             families: [
@@ -9,3 +9,5 @@ export default () =>
             ],
         },
     });
+
+export default loadFonts;
