@@ -20,6 +20,11 @@ import CartProducts from './cart/CartProducts';
 import CartTopContent from './cart/CartTopContent';
 import CartTotals from './cart/CartTotals';
 
+import CheckoutSummary from './checkout/CheckoutSummary';
+import CheckoutAddress from './checkout/CheckoutAddress';
+import CheckoutComplete from './checkout/CheckoutComplete';
+import CheckoutPayment from './checkout/CheckoutPayment';
+
 export { 
   BookCard,
   Header,
@@ -42,4 +47,9 @@ export {
   CartProducts,
   CartTopContent,
   CartTotals,
+
+  CheckoutSummary,
+  CheckoutAddress,
+  CheckoutComplete,
+  CheckoutPayment,
 };
