@@ -11,6 +11,10 @@ import Bookshelf from './landing/Bookshelf';
 import EmptyBasket from './cart/EmptyBasket';
 import PaymentForm from './checkout/PaymentForm';
 
+import CartProducts from './cart/CartProducts';
+import CartTopContent from './cart/CartTopContent';
+import CartTotals from './cart/CartTotals';
+
 export { 
   BookCard,
   Header,
@@ -24,4 +28,8 @@ export {
   Bookshelf,
   EmptyBasket,
   PaymentForm,
+
+  CartProducts,
+  CartTopContent,
+  CartTotals,
 };
