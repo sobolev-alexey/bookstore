@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
@@ -7,6 +8,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['log', 'error'],
   });
+  const configService: ConfigService = app.get(ConfigService);
+
   const config = new DocumentBuilder()
     .setTitle('Bookstore')
     .setDescription('The Bookstore API description')
@@ -17,7 +20,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.enableCors();
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(configService.get<string>('PORT') || 3000);
   console.log(`Application is listening on: ${await app.getUrl()}`);
 }
 bootstrap();
