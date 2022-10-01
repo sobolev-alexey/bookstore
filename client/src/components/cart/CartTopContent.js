@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'; 
 import basketImage from '../../assets/cart/basket-shopping-solid-black.svg';
-import paypalImage from '../../assets/cart/paypal_button.jpg';
 
-const CartTopContent = ({ basket, priceLabel }) => {
+const CartTopContent = ({ basket, priceLabel, children }) => {
   return (
     <div className="card cart-top-content-wrapper">
       <div className="cart-top-content">
@@ -13,8 +12,7 @@ const CartTopContent = ({ basket, priceLabel }) => {
           </p>
         </span>
         <span className="action-buttons">
-          <img src={paypalImage} alt="Check out with PayPal" className="paypal"/>
-          &nbsp;&nbsp;&nbsp;&nbsp; - Or -  &nbsp;&nbsp;&nbsp;&nbsp;
+          { children }
           <Link to="/checkout">
             <button className="primary">Checkout</button>
           </Link>
