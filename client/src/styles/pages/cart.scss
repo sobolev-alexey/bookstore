@@ -68,6 +68,13 @@
           height: 42px;
           font-weight: 700;
         }
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+        }
       }
     }
 
