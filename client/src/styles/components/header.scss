@@ -161,3 +161,35 @@
     }
   }
 }
+
+.corner-ribbon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: transparent;
+  pointer-events: none;
+
+  .corner-ribbon {
+    position: absolute;
+    padding: 0.1em 2em;
+    z-index: 99;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    pointer-events: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    background-color: $badge-color;
+    color: $white;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%) rotate(90deg) translateX(70.71067811865476%) rotate(-45deg);
+    transform-origin: bottom right;
+    webkit-transform: translateY(-100%) rotate(90deg) translateX(70.71067811865476%) rotate(-45deg);
+
+
+  }
+}
