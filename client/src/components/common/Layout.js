@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="layout">
+      <CornerRibbon />
       <Header />
         <ErrorBoundary 
           FallbackComponent={ErrorFallback} 

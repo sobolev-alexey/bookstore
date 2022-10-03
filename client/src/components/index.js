@@ -11,6 +11,7 @@ import Search from './header/Search';
 import Bookshelf from './landing/Bookshelf';
 import EmptyBasket from './cart/EmptyBasket';
 import PaymentForm from './checkout/PaymentForm';
+import CornerRibbon from './common/CornerRibbon';
 
 import MainDetails from './details/MainDetails';
 import PriceDetails from './details/PriceDetails';
@@ -34,6 +35,7 @@ export {
   HeaderNavigation,
   Footer,
   Banner,
+  CornerRibbon,
   BookCarousel,
   Cart,
   Layout,
