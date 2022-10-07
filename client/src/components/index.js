@@ -1,3 +1,4 @@
+import ErrorFallback from './common/ErrorFallback';
 import BookCard from './common/BookCard';
 import Header from './header/Header';
 import HeaderNavigation from './header/HeaderNavigation';
@@ -27,6 +28,7 @@ import CheckoutComplete from './checkout/CheckoutComplete';
 import CheckoutPayment from './checkout/CheckoutPayment';
 
 export { 
+  ErrorFallback,
   BookCard,
   Header,
   HeaderNavigation,

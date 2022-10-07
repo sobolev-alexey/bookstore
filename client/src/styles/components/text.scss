@@ -15,7 +15,7 @@ a {
   text-decoration: none;
   color: $link-color;
 
-  &:hover {
+  &:hover:not(.primary) {
     color: $link-color;
     text-decoration: underline;
     text-underline-offset: 2px;
