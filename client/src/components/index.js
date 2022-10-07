@@ -19,6 +19,7 @@ import SuggestionDetails from './details/Suggestions';
 import CartProducts from './cart/CartProducts';
 import CartTopContent from './cart/CartTopContent';
 import CartTotals from './cart/CartTotals';
+import PayPalButton from './cart/PayPalButton';
 
 import CheckoutSummary from './checkout/CheckoutSummary';
 import CheckoutAddress from './checkout/CheckoutAddress';
@@ -47,6 +48,7 @@ export {
   CartProducts,
   CartTopContent,
   CartTotals,
+  PayPalButton,
 
   CheckoutSummary,
   CheckoutAddress,

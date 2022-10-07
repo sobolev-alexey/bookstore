@@ -1,15 +1,24 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import { AppContext } from '../context/globalState';
-import { 
-  Layout, BookCarousel, EmptyBasket, CartTopContent, CartProducts, CartTotals 
-} from '../components';
 import { getPriceLabel } from '../utils/helpers';
+import callApi from '../utils/callApi';
+import { 
+  Layout, 
+  BookCarousel, 
+  EmptyBasket, 
+  CartTopContent, 
+  CartProducts, 
+  CartTotals, 
+  PayPalButton,
+  CheckoutComplete,
+} from '../components';
 
 const Cart = () => {
   const { books, basket, updateBasket } = useContext(AppContext);
   const [randomBookIndex, setRandomBookIndex] = useState(0);
   const [priceLabel, setPriceLabel] = useState();
+  const [orderID, setOrderID] = useState('');
 
   useEffect(() => {
     setPriceLabel(getPriceLabel(
@@ -55,35 +64,72 @@ const Cart = () => {
     updateBasket(myBasket);
   }
 
+  const processPayment = async (details, data) => {
+    const name = `${details?.payer?.name?.given_name} ${details?.payer?.name?.surname}`;
+    await callApi('post', 'order', { 
+      name,
+      address1: '',
+      city: '',
+      postcode: 'No Postcode',
+      email: details?.payer?.email_address,
+      cardholder: name,
+      amount: Number(basket?.total.toFixed(2)),
+      bookIds: basket?.items?.map(item => item.id).join(', '),
+      basket: JSON.stringify(basket.items),
+      orderId: data.orderID
+    });
+    setOrderID(data.orderID);
+  }
+
   return (
     <Layout>
       <div className="cart-page-wrapper">
-        <h1>Your basket</h1>
         {
-          basket.count === 0 ? <EmptyBasket /> : (
+          orderID ? (
+            <CheckoutComplete orderID={orderID} updateBasket={updateBasket} />
+          ) : (
             <>
-              <CartTopContent basket={basket} priceLabel={priceLabel} />
-              <CartProducts basket={basket} removeBook={removeBook} changeQty={changeQty} />
-              <CartTotals priceLabel={priceLabel} />
-              <div className="card suggestions-wrapper book-carousel-wrapper">
-                <h3>Often bought with your items</h3>
-                <BookCarousel 
-                  books={books
-                    ?.filter(item => item?.listPrice)
-                    ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
-                    ?.sort((a, b) => b?.averageRating - a?.averageRating)
-                    ?.slice(randomBookIndex, randomBookIndex + 14)
-                  } 
-                />
+              <h1>Your basket</h1>
+              {
+                basket.count === 0 ? <EmptyBasket /> : (
+                  <>
+                    <CartTopContent basket={basket} priceLabel={priceLabel}>
+                      <PayPalButton
+                        amount={basket?.total}
+                        currency={basket.items?.[0]?.currency}
+                        callback={processPayment}
+                      />
+                    </CartTopContent>
+                    <CartProducts basket={basket} removeBook={removeBook} changeQty={changeQty} />
+                    <CartTotals priceLabel={priceLabel}>
+                      <PayPalButton
+                        amount={basket?.total}
+                        currency={basket.items?.[0]?.currency}
+                        callback={processPayment}
+                      />
+                    </CartTotals>
+                    <div className="card suggestions-wrapper book-carousel-wrapper">
+                      <h3>Often bought with your items</h3>
+                      <BookCarousel 
+                        books={books
+                          ?.filter(item => item?.listPrice)
+                          ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
+                          ?.sort((a, b) => b?.averageRating - a?.averageRating)
+                          ?.slice(randomBookIndex, randomBookIndex + 14)
+                        } 
+                      />
+                    </div>
+                  </>
+                )
+              }
+              <div className="continue-shopping">
+                <Link to="/">
+                  <button className="continue">Continue shopping</button>
+                </Link>
               </div>
             </>
           )
         }
-        <div className="continue-shopping">
-          <Link to="/">
-            <button className="continue">Continue shopping</button>
-          </Link>
-        </div>
       </div>
     </Layout>
   );
