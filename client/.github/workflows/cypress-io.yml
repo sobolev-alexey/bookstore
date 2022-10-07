@@ -1,0 +1,54 @@
+name: Cypress CI Tests
+
+on:
+  # Manual button click from the GitHub UI
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    # container:
+    #   image: cypress/included:9.1.1
+    #   options: --ipc=host
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run Cypress E2E Tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: 'http://localhost:1234'
+          record: true
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: NPM Install
+        run: npm ci
+
+      - name: Install Start Server and Test
+        run: npm install start-server-and-test --no-save
+
+      - name: Run Application and Cypress E2E Tests
+        run: npx start-server-and-test start http://localhost:1234 cypress:run
+
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Cypress screenshots
+          path: cypress/screenshots
+
+      - name: Upload Cypress Videos
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Cypress videos
+          path: cypress/videos
