@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import useSWR from 'swr';
+import { notification } from 'antd';
 import callApi from '../utils/callApi';
 
 export const AppContext = React.createContext({});
 
-const GlobalState = ({ children }) => {
+function GlobalState({ children }) {
   const [isLoading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
@@ -14,6 +16,32 @@ const GlobalState = ({ children }) => {
     getBooks();
     fetchBasket();
   }, []); // eslint-disable-line
+
+  const errorCallback = (error = null) => {
+    notification['error']({
+      key: 'api-error',
+      duration: 10,
+      message: 'Error',
+      description:
+        error || 'There was an error loading data. Please see console output for details.',
+    });
+    console.error(error);
+  };
+  
+  // Options API https://swr.vercel.app/docs/options
+  const { data, error } = useSWR(`${process.env.REACT_APP_BACKEND_URL}/books`);
+  if (error) {
+    errorCallback(error);
+  }
+
+  useEffect(() => {
+    if (data.length) {
+      setBooks(data);
+      setFilteredBooks(data);
+      setLoading(false);
+      localStorage.setItem('books', JSON.stringify(data));
+    }
+  }, [data]); // eslint-disable-line
 
   const fetchData = async () => {
     const data = await callApi('get', 'books');
