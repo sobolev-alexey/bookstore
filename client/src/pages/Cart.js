@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import { AppContext } from '../context/globalState';
-import { getPriceLabel } from '../utils/helpers';
+import { getPriceLabel, getRandomBooks } from '../utils/helpers';
 import callApi from '../utils/callApi';
 import { 
   Layout, 
@@ -16,7 +16,6 @@ import {
 
 const Cart = () => {
   const { books, basket, updateBasket } = useContext(AppContext);
-  const [randomBookIndex, setRandomBookIndex] = useState(0);
   const [priceLabel, setPriceLabel] = useState();
   const [orderID, setOrderID] = useState('');
 
@@ -26,7 +25,6 @@ const Cart = () => {
       basket.items?.[0]?.country, 
       basket.items?.[0]?.currency
     ))
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
   }, [basket?.total]); // eslint-disable-line
 
   const removeBook = book => {
@@ -110,14 +108,7 @@ const Cart = () => {
                     </CartTotals>
                     <div className="card suggestions-wrapper book-carousel-wrapper">
                       <h3>Often bought with your items</h3>
-                      <BookCarousel 
-                        books={books
-                          ?.filter(item => item?.listPrice)
-                          ?.sort((a, b) => b?.ratingsCount - a?.ratingsCount)
-                          ?.sort((a, b) => b?.averageRating - a?.averageRating)
-                          ?.slice(randomBookIndex, randomBookIndex + 14)
-                        } 
-                      />
+                      <BookCarousel books={getRandomBooks(books)} />
                     </div>
                   </>
                 )
