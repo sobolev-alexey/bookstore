@@ -12,6 +12,7 @@ import Bookshelf from './landing/Bookshelf';
 import EmptyBasket from './cart/EmptyBasket';
 import PaymentForm from './checkout/PaymentForm';
 import CornerRibbon from './common/CornerRibbon';
+import Loading from './common/Loading';
 
 import MainDetails from './details/MainDetails';
 import PriceDetails from './details/PriceDetails';
@@ -43,6 +44,7 @@ export {
   Bookshelf,
   EmptyBasket,
   PaymentForm,
+  Loading,
 
   MainDetails,
   PriceDetails,
