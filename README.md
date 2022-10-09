@@ -1,6 +1,6 @@
 # Book shop e-commerce site
 
-The design of the page was taken from the https://www.bookdepository.com/.
+The design of the page was taken from the https://www.bookdepository.com/
 
 ### Documentation
 
