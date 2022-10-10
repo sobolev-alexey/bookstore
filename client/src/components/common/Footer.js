@@ -10,7 +10,7 @@ const Footer = () => {
         </Link>
         <div className='copyright'>
           <a href='https://lexer.dev' target='_blank' rel='noopener noreferrer' className='personal'>
-            © Alexey Sobolev (https://lexer.dev)
+            © Alexey Sobolev 🇺🇦 (https://lexer.dev)
           </a>
           <span>
             Design by
