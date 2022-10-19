@@ -12,6 +12,7 @@ const MainDetails = ({ book, addBook }) => {
             src={book?.cover} 
             alt={book?.title} 
             width={260}
+            height={390}
             preview={false}
             fallback={missingImage}
           />

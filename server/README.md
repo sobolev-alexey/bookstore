@@ -57,7 +57,7 @@ npm run test:cov
 ## API Documentation
 
 #### Automatically generated API documentation
-An openapi (formerly known as swagger) documentation is automatically created using the `@nestjs/swagger` module as described in the [NestJs OpenAPI](
+An OpenAPI (formerly known as swagger) documentation is automatically created using the `@nestjs/swagger` module as described in the [NestJs OpenAPI](
 https://docs.nestjs.com/openapi/introduction) documentation.
 
 While the application is running, open your browser and navigate to http://localhost:3000/api  
@@ -118,7 +118,7 @@ https://www.prisma.io/docs/reference/database-reference/supported-databases).
 
 The Prisma model doesn't use a database specific index for the books 'ID' attribute
 to speed up fuzzy text search. In a production environment
-this may soon result in performance issues. When performance issues are adressed the model should be extended to use such an index.
+this may soon result in performance issues. When performance issues are addressed the model should be extended to use such an index.
 Examples: [SQLite FTS5](https://www.sqlite.org/fts5.html) or [PostgreSQL gist indexes](
 https://www.alibabacloud.com/blog/postgresql-fuzzy-search-best-practices-single-word-double-word-and-multi-word-fuzzy-search-methods_595635).
 
@@ -131,7 +131,7 @@ The project structure and boilerplate code of this project has been created usin
 cli. This is how it works respectively what has been done:
 
 #### Create project folder
-In your local develop folder the new nest app project folder will be created by nestjs.
+In your local develop folder the new nest app project folder will be created by NestJS.
 Additionally all needed dependencies will be installed. 
 There is no need to install NestJS to do this because `npx` will download the `NestJS cli` before it is executed.
 Choose the package manager according to your needs. In the following `npm` was used.

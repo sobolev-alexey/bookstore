@@ -1,11 +1,12 @@
 .cart-page-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 1200px;
   width: 100%;
   align-self: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 266px);
 
   h1 {
     align-self: flex-start;

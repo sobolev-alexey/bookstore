@@ -1,30 +1,19 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { Spin } from 'antd';
+import useSWR from 'swr';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/globalState';
 import { Layout, MainDetails, AdditionalDetails, SuggestionDetails } from '../components';
-import callApi from '../utils/callApi';
 
 const Details = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
   const { books, basket, updateBasket } = useContext(AppContext);
-  const [book, setBook] = useState({});
-  const [randomBookIndex, setRandomBookIndex] = useState(0);
 
-  useEffect(() => {
-    async function getBook() {
-      const backendResponse = await callApi('get', `books/${bookId}`);
-      if (backendResponse === 'Book not found') {
-        navigate('/');
-      } else {
-        setBook(backendResponse);
-      }
-    }
-
-    getBook();
-    setRandomBookIndex(Math.floor(Math.random() * books?.length - 100) + 14);
-  }, [bookId]); // eslint-disable-line
+  const { data: book, error } = useSWR(`${process.env.REACT_APP_BACKEND_URL}/books/${bookId}`);
+  if (error) {
+    navigate('/');
+  }
 
   const addBook = book => {
     const myBasket = { ...basket };
@@ -46,13 +35,13 @@ const Details = () => {
   return (
     <Layout>
       {
-        !book || !book?.id 
+        !book || !book?.id || !books?.length
           ? <Spin size="large" /> 
           : (
               <div className="details-page-wrapper">
                 <MainDetails book={book} addBook={addBook} />
                 <AdditionalDetails book={book} />
-                <SuggestionDetails book={book} books={books} index={randomBookIndex} />
+                <SuggestionDetails book={book} books={books} />
               </div>
             )
       }

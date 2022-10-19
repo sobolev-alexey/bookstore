@@ -25,13 +25,13 @@ Book data is fetched from [`Google Books API`](https://developers.google.com/boo
 This data is fetched once on the backend and stored in a JSON file `books.json`, which is now used to populate book results.
 
 #### Search
-Fully functional dual search functionality. First (more performant) search is run over cached items and the result is shown instantly. In addition a search request is sent to the backend API for advanced search including fields like description, ISBN, publisher, category to name a few. Once the search response is available, it will be shown to the customer by updating the seach results 
+Fully functional dual search functionality. First (more performant) search is run over cached items and the result is shown instantly. In addition a search request is sent to the backend API for advanced search including fields like description, ISBN, publisher, category to name a few. Once the search response is available, it will be shown to the customer by updating the search results 
 
 #### Navigation
 Header category navigation with additional scroll-to-category functionality
 
 #### Marketing banner
-Marketing banner embedded into a carousel is shown on the promiment position of the landing page. 
+Marketing banner embedded into a carousel is shown on the prominent position of the landing page. 
 It can contain promotional information and featured books. 
 The carousel automatically rotates every 10 seconds giving just enough time to check the content
 
@@ -50,7 +50,7 @@ Stripe checkout is split in three steps:
 2. Payment details are sent to server backend in order to generate so-called payment intent, which should return a payment key valid for this specific purchase. 
 3. Client issues payment confirmation request to Stripe including billing details entered by the customer. Once the payment is verified and accepted, Stripe responds with unique payment ID, which can be also used as order ID.
 
-Stripe publisheable key should be added to `.env` in order to activate payments with Stripe
+Stripe publishable key should be added to `.env` in order to activate payments with Stripe
 
 #### Simple checkout
 If no Stripe account is available, checkout will simply validate address fields and then activate a `Buy now` button, which will generate fake order object along with random order ID.  
@@ -58,7 +58,7 @@ No payment details are requested, as it would add additional security concerns o
 
 
 #### Shopping basket dynamic functionality
-* Basket functionality is fully dynatic, items can be removed, item quantity can be changed and new items can be added from the carousel wrapper or details page at any time.  
+* Basket functionality is fully dynamic, items can be removed, item quantity can be changed and new items can be added from the carousel wrapper or details page at any time.  
 * Mini cart view in the header is automatically updated once items are added or removed.  
 * Basket is stored in browser's storage to survive window refreshes and browser terminations.  
 * Basket is automatically clearer after checkout if customer presses the `Continue shopping` button
@@ -114,7 +114,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Performance
 * Server responses are cached and stored in browsers' local storage
-* Image assests (book covers) are fetched from CDN and cached by the browser
+* Image assets (book covers) are fetched from CDN and cached by the browser
 * Stateless React components which display static book data are cached using **React.memo** 
 
 <hr>

@@ -6,6 +6,7 @@
 @import './components/button';
 @import './components/form';
 @import './components/header';
+@import './components/footer';
 @import './components/text';
 @import './components/bookCard';
 @import './components/bookCarousel';
@@ -108,6 +109,10 @@ button {
   display: flex;
   flex-direction: column;
   background-color: $background-color;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
 }
 
 #root {
@@ -118,5 +123,5 @@ button {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	left: calc(50% + 120px);
+	left: 50%;
 }
